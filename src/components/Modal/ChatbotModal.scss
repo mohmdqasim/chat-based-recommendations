@@ -1,0 +1,147 @@
+.chatModal{
+  &.modal{
+      font-family: "Inter", sans-serif;
+      .modal-content{
+          border-radius: 16px;
+          border: 0;
+          .modal-header{
+              border: 0;
+              position: relative;
+              background: #4169E1;
+              border-top-left-radius: 15px;
+              border-top-right-radius: 15px;
+              .modal-title{
+                  color: #fff;
+                  font-size: 18px;
+                  font-weight: 500;
+              }
+             
+          }
+          .modal-body{
+            position: relative;
+              .chatbot{
+                  background-color: #4169E1;
+                  border-radius: 10px;
+                  font-size: 14px;
+                  padding: 10px;
+                  font-weight: 500;
+                  color: white;
+                  margin: 40px auto;
+                  border: 0;
+                  outline: none;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                  &:hover{
+                    background-color: #315fe7;
+                  }
+                  img{
+                    width: 10px;
+                    margin-left: 10px;
+                  }
+                }
+                .upload{
+                    position: relative;
+                    border: 2px dashed #213469;
+                    background-color: #F5F5FB;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 50px 0;
+                    gap: 5px;
+                    margin-top: 40px;
+                   p{
+                    margin: 0;
+                    text-align: center;
+                  color: #213469;
+                  font-weight: 600;
+                  line-height: normal;
+                  }
+                  span{
+                    display: block;
+                    color: #989CA0;
+                    font-size: 12px;
+                    line-height: normal;
+                  }
+                  img{
+                    margin-bottom: 10px;
+                  }
+                   input{
+                    position: absolute;
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    opacity: 0;
+                  }
+                  
+                }
+                .source{
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin: 15px 0;
+                  p{
+                    margin: 0;
+                    color: #213469;
+                    font-weight: 600;
+                    font-size: 14px;
+                  }
+                }
+                .continue{
+                  margin: 30px auto;
+                  display: flex;
+                  padding: 10px 50px;
+                  background-color: #4169E1;
+                  outline: 0;
+                  border: 0;
+                  border-radius: 10px;
+                  color: white;
+                  &:hover{
+                      background-color: #2e5ad7;
+                      
+                  }
+                }
+                  ul{
+                    border: 0;
+                    justify-content: space-between;
+                    background: #F5F5FB;
+                    border: 1px solid #D9D9EA;
+                    display: flex;
+                    margin: 20px auto 0;
+                    width: 230px;
+                    padding: 8px;
+                    border-radius: 10px;
+                    position: relative;
+                    &::after{
+                      content: "";
+                      display: block;
+                      height: 30px;
+                      width: 1px;
+                      background: #D9D9EA;
+                      position: absolute;
+                      right: 45%;
+                      top: 50%;
+                      transform: translate(-50%, -50%);
+                    }
+                    .nav-link{
+                      color: #000;
+                      border: 0;
+                      &.active{
+                        background: #4169E1;
+                        color: white;
+                        border-radius: 10px;
+                        border: 0;
+                      }
+                    }
+                  }
+          }
+      }
+  
+  }
+}

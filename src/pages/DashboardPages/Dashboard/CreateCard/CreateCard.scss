@@ -1,0 +1,68 @@
+.createCard{
+    text-align: center;
+    .card{
+        background: linear-gradient(180deg, #fff -38%, #E8E8FE 100%);
+        padding: 40px 20px;
+        border: 1px solid #ECECEC;
+        border-radius: 10px;
+        h2{
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .input-group{
+            input{
+                margin: 0;
+                color: black;
+                width: 100%;
+                padding: 15px;
+                border: 0;
+                background: white;
+                border-radius: 10px !important;
+                height: 66px;
+            }
+            button{
+                position: absolute;
+                right: 10px;
+                border: 0;
+                outline: none;
+                background: #CDCDFF;
+                padding: 10px;
+                color: white;
+                border-radius: 10px !important;
+                top: 50%;
+                transform: translate(0px, -50%);
+            }
+        }
+        .cards{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            .mini-card{
+                width: 49%;
+                background: #fff;
+                padding: 15px;
+                border-radius: 10px;
+                border: none;
+                text-align: left;
+                @media screen and (max-width: 600px){
+                    width: 100%;
+                    
+                }
+                a{
+                    display: inline-block;
+                    h4{
+                        font-size: 16px;
+                        margin: 0;
+                    }
+                    p{
+                        font-size: 14px;
+                        color: #989CA0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

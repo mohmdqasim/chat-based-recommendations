@@ -1,0 +1,59 @@
+.score{
+    .Scorecard{
+        background: #fff;
+        padding: 20px 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ECECEC;
+        h4{
+            font-size: 24px;
+        }
+        table{
+            margin: 0;
+            tbody, td, tfoot, th, thead, tr {
+                border-bottom: 0 !important;
+                text-align: left;
+                font-weight: 700;
+            }
+            tr{
+                    .name{
+                        &::before{
+                            content: '';
+                            margin-right: 10px;
+                            width: 10px;
+                            height: 10px;
+                            display: inline-block;
+                            border-radius: 100px;
+                            background-color: #4169E1;
+                        }
+                    }
+            }
+        }
+    }
+    .Docscard{
+        background: #fff;
+        padding: 20px 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ECECEC;
+        h4{
+            font-size: 24px;
+        }
+        table{
+            margin: 0;
+            tbody, td, tfoot, th, thead, tr {
+                border-bottom: 1px solid #D5D5D5 !important;
+                text-align: left;
+                font-weight: 700;
+                padding: 8px;
+                padding-left: 0;
+            }
+            td{
+                font-size: 13px;
+            }
+            th{
+                border-top: 0 !important;
+            }
+        }
+    }
+}
