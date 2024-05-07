@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+}
+
+h2 {
+  color: #603813; 
+}
+         
+button {
+  background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
+  margin: 5px;
+  padding: 10px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.left-panel {
+  flex: 2;
+  /* padding-top: 0.0in; */
+  background-color: white;
+}
+
+.right-panel {
+  height: 90vh;
+  
+  flex: 1.5;
+  padding-bottom: 28px;
+  background-color: #6038139a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center align items vertically */
+  align-items: center; /* Center align items horizontally */
+}
+
+.response-window {
+  height: 110%;
+  margin-top: 20px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 800px; /* Limit maximum width */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.90);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  overflow-y: auto; /*Enable vertical scrollbar if content exceeds window height*/
+}
+
+.generated-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}

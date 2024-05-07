@@ -6,7 +6,7 @@ export default function Voice() {
   const [modalShow, setModalShow] = useState(false);
   const [tabs, setTabs] = useState(0);
   // State to manage the visibility of the VoiceModal
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
   const tabButtons = [
     "Voices", 

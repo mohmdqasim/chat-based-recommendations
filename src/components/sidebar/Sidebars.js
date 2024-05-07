@@ -6,7 +6,10 @@ import bizz from "../../assets/images/bizz.svg";
 import bank from "../../assets/images/bank.svg";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 import { Link, useLocation } from "react-router-dom";
-import ChatbotModal from '../Modal/ChatbotModal'
+import ChatbotModal from '../Modal/ChatbotModal';
+import TrainChatbotModal from '../Modal/TrainChatbotModal';
+
+
 
 export const Sidebars = (props) => {
   const location = useLocation();
@@ -45,7 +48,7 @@ export const Sidebars = (props) => {
           <h5>NAME</h5>
         </div>
         <Menu>
-          <button className="chatbot" onClick={() => setModalShow(true)}>Create new chatbot <img src="/images/add.svg" alt="add" /></button>
+          <button className="chatbot" onClick={() => setModalShow(true)}>Start Campaign <img src="/images/add.svg" alt="add" /></button>
           <MenuItem
             onClick={() => handleImageClick(dashboard)}
             component={<Link to="/" />}
@@ -80,7 +83,8 @@ export const Sidebars = (props) => {
           </MenuItem>
         </Menu>
       </Sidebar>
-      <ChatbotModal show={modalShow} handleClose={() => setModalShow(false)} />
+      
+      <TrainChatbotModal show={modalShow} handleClose={() => setModalShow(false)} />
     </>
   );
 };

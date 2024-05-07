@@ -12,6 +12,9 @@ import Voice from "../pages/DashboardPages/Voice/Voice";
 import Bizz from "../pages/DashboardPages/Bizz/Bizz";
 import Bank from "../pages/DashboardPages/Bank/Bank";
 import Chat from "../pages/DashboardPages/Chat/Chat";
+import AmazonPfeature from "../components/forms/AmazonPfeature";
+import Cards from "../components/Cards";
+
 
 const isAuthenticated = true;
 
@@ -40,6 +43,9 @@ export default function index() {
           <Route path="/bizz" element={<Bizz />} />
           <Route path="/bank" element={<Bank />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/Cards" element={<Cards />} />
+          <Route path="/AmazonProduct" element={<AmazonPfeature />} />
+           {/* <Route path="/AmazonProduct" element={<Form1 />} /> */}
         </Route>
       </Routes>
     </Router>
