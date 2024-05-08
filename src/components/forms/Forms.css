@@ -28,7 +28,8 @@ button:hover {
 
 
 .left-panel {
-  flex: 2;
+  margin-left: -40px;
+  flex: 1.5;
   /* padding-top: 0.0in; */
   background-color: white;
 }
@@ -48,9 +49,8 @@ button:hover {
 }
 
 .right-panel {
-  height: 120vh;
-  
-  flex: 1.5;
+  height: 100vh;
+  flex: 1.6;
   padding-bottom: 28px;
   background-color: #6038139a;
   display: flex;
@@ -60,9 +60,9 @@ button:hover {
 }
 
 .response-window {
-  height: 130%;
-  margin-top: 40px;
-  width: 80%; /* Adjust width as needed */
+  height: 120%;
+  margin-top: 20px;
+  width: 95%; /* Adjust width as needed */
   max-width: 800px; /* Limit maximum width */
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.90);

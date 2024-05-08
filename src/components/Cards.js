@@ -70,8 +70,8 @@ export default function Cards() {
           key={card.id}
           style={{
             ...cardStyle,
-            backgroundColor: isHovered(card.id) ? '#60381a' : 'white',
-            boxShadow: isHovered(card.id) ? '0 0 10px rgba(0, 0, 0, 0.2)' : 'none',
+            backgroundColor: isHovered(card.id) ? '#0000FF' : 'white',
+            boxShadow: isHovered(card.id) ? '0 0 10px rgba(0, 0, 0, 0)' : 'none',
           }}
           onClick={() => handleCardClick(`/${card.id}`)}
           onMouseEnter={() => handleMouseEnter(card.id)}
