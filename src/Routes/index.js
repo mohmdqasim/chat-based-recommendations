@@ -14,6 +14,20 @@ import Bank from "../pages/DashboardPages/Bank/Bank";
 import Chat from "../pages/DashboardPages/Chat/Chat";
 import AmazonPfeature from "../components/forms/AmazonPfeature";
 import Cards from "../components/Cards";
+import AmazonProduct from "../components/forms/AmazonProduct";
+import BlogPost from "../components/forms/BlogPost";
+import BlogPostIntro from "../components/forms/BlogPostIntro";
+import BlogPostOutline from "../components/forms/BlogPostOutline";
+import BlogPostTopicIdeas from "../components/forms/BlogPostTopicIdeas";
+import BusinessOrProductName from "../components/forms/BusinessOrProductName";
+import Commands from "../components/forms/Commands";
+import CompanyBio from "../components/forms/CompanyBio";
+import ContentImprover from "../components/forms/ContentImprover";
+import CreativeStory from "../components/forms/CreativeStory";
+import EmailSubjectLines from "../components/forms/EmailSubjectLines";
+import FacebookAds from "../components/forms/FacebookAds";
+import JobDescription from "../components/forms/JobDescription";
+import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
 
 
 const isAuthenticated = true;
@@ -44,8 +58,30 @@ export default function index() {
           <Route path="/bank" element={<Bank />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/Cards" element={<Cards />} />
-          <Route path="/AmazonProduct" element={<AmazonPfeature />} />
-           {/* <Route path="/AmazonProduct" element={<Form1 />} /> */}
+          <Route path="/AmazonPfeature" element={<AmazonPfeature />} />
+          <Route path="/AmazonProduct" element={<AmazonProduct />} />
+          <Route path="/AmazonProduct" element={<AmazonProduct />} />
+          <Route path="/BlogPost" element={<BlogPost />} />
+          <Route path="/BlogPostIntro" element={<BlogPostIntro/>} />
+          <Route path="/BlogPostOutline" element={<BlogPostOutline/>} />
+          <Route path="/BlogPostTopicIdeas" element={<BlogPostTopicIdeas/>} />
+          <Route path="/BusinessOrProductName" element={<BusinessOrProductName/>} />
+          <Route path="/Commands" element={<Commands/>} />
+          <Route path="/CompanyBio" element={<CompanyBio/>} />
+          <Route path="/ContentImprover" element={<ContentImprover/>} />
+          <Route path="/CreativeStory" element={<CreativeStory/>} />
+          <Route path="/EmailSubjectLines" element={<EmailSubjectLines/>} />
+          <Route path="/FacebookAds" element={<FacebookAds/>} />
+          <Route path="/JobDescription" element={<JobDescription/>} />
+          <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas/>} />
+          
+
+
+
+
+
+          
+
         </Route>
       </Routes>
     </Router>

@@ -6,7 +6,7 @@ h2 {
   color: #603813; 
 }
          
-button {
+/* button {
   background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
   margin: 5px;
   padding: 10px 35px;
@@ -18,7 +18,7 @@ button {
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
-}
+} */
 
 button:hover {
   background-position: right center; /* change the direction of the change here */
@@ -32,9 +32,23 @@ button:hover {
   /* padding-top: 0.0in; */
   background-color: white;
 }
+#submit-btn{
+  background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
+  margin: 5px;
+  padding: 10px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+
+}
 
 .right-panel {
-  height: 90vh;
+  height: 120vh;
   
   flex: 1.5;
   padding-bottom: 28px;
@@ -46,8 +60,8 @@ button:hover {
 }
 
 .response-window {
-  height: 110%;
-  margin-top: 20px;
+  height: 130%;
+  margin-top: 40px;
   width: 80%; /* Adjust width as needed */
   max-width: 800px; /* Limit maximum width */
   padding: 20px;

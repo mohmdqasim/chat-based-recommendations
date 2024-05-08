@@ -8,9 +8,9 @@ const containerStyle = {
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'center',
-  gap: '90px',
+  gap: '50px',
   rowGap: '40px',
-  marginTop: '70px',
+  marginTop: '10px',
 };
 
 const cardStyle = {
@@ -20,7 +20,7 @@ const cardStyle = {
   marginTop: 7,
   cursor: 'pointer',
   padding: '16px',
-  border: '1px solid #ccc',
+  border: '2px solid #ccc',
   borderRadius: 8,
   overflow: 'hidden',
   transition: 'background-color 0.3s ease, box-shadow 0.3s ease',

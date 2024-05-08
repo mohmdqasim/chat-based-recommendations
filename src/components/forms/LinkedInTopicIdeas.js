@@ -1,13 +1,13 @@
 import React from 'react';
 import './Forms.css'; // Import CSS file for additional styling
 
-function Forms() {
+function LinkedInTopicIdeas() {
   return (
     <div className="container">
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }}>
           <div style={{ marginBottom: '15px' }}>
-            <h2>Topic Details</h2>
+            <h2>LinkedIn Topic Ideas</h2>
           </div>
 
           <div style={{ marginBottom: '15px' }}>
@@ -29,7 +29,7 @@ function Forms() {
             ></textarea>
           </div>
 
-          <button
+          <button id='submit-btn'
             type="submit"
           >
             Generate
@@ -49,4 +49,4 @@ function Forms() {
   );
 }
 
-export default Forms;
+export default LinkedInTopicIdeas;

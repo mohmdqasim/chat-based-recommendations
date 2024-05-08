@@ -16,7 +16,7 @@ function Forms() {
             <input
               id="product-name"
               type="text"
-              placeholder="Enter product name"
+              placeholder="A red t-shirt"
               style={{ width: '100%', padding: '9px' }}
             />
           </div>
@@ -25,7 +25,7 @@ function Forms() {
             <label htmlFor="key-features">Key Features/Benefits:</label>
             <textarea
               id="key-features"
-              placeholder="Enter key features or benefits"
+              placeholder="Stretching, Pleasant"
               style={{ width: '100%', minHeight: '100px', padding: '5px' }}
             ></textarea>
           </div>
@@ -35,12 +35,12 @@ function Forms() {
             <input
               id="tone-of-voice"
               type="text"
-              placeholder="Select a tone..."
+              placeholder="Witty,Friendly"
               style={{ width: '100%', padding: '9px' }}
             />
           </div>
 
-          <button type="submit">
+          <button id='submit-btn' type="submit">
             Generate
           </button>
         </form>

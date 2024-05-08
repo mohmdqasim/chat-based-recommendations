@@ -4,6 +4,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab'; // Import Tab here
 import { Link } from 'react-router-dom'; 
 
+
 function TrainChatbotModal({ show, handleClose }) {
   return (
     <div >
@@ -26,7 +27,9 @@ function TrainChatbotModal({ show, handleClose }) {
                   <p>Sources which included:</p>
                   <p>0/400000 Character</p>
                 </div>
-                <button className='continue'>Next</button>
+                <Link  className='continue' to="../Cards">
+                  Next
+                </Link>
               </div>
             </div>
           </Tab>

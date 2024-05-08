@@ -10,7 +10,7 @@ export default function Voice() {
 
   const tabButtons = [
     "Voices", 
-    "Memories"
+    "Knowledge Pool"
   ];
 
   // Define complex content for each tab
@@ -34,15 +34,15 @@ export default function Voice() {
     (
       <div className="voicesTab">
         <div className="card">
-          <h4><img src="/images/flag.svg" alt="flag" /> Get started with Memories</h4>
+          <h4><img src="/images/flag.svg" alt="flag" /> Get started with Knowledge Pool</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
         </div>
         <div className="addVoice">
           <div className="content">
-          <h4>Your Memories</h4>
+          <h4>Your Knowledge Pool</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
           </div>
-          <button className="add" onClick={() => setModalShow(true)}>Add Memories</button>
+          <button className="add" onClick={() => setModalShow(true)}>Add Knowledge Pool</button>
         </div>
         <p className="info">You have’t created any voices yet</p>
       </div>

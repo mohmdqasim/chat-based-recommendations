@@ -1,13 +1,13 @@
 import React from 'react';
 import './Forms.css'; // Import CSS file for additional styling
 
-function Forms() {
+function JobDescription() {
   return (
     <div className="container">
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }}>
           <div style={{ marginBottom: '15px' }}>
-            <h2>Job Details</h2>
+            <h2>Job Description</h2>
           </div>
 
           <div style={{ marginBottom: '15px' }}>
@@ -96,7 +96,7 @@ function Forms() {
           </div>
 
           <button
-            type="submit"
+            type="submit" id='submit-btn'
           >
             Generate
           </button>
@@ -115,4 +115,4 @@ function Forms() {
   );
 }
 
-export default Forms;
+export default JobDescription;

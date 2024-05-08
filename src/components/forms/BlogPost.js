@@ -1,13 +1,13 @@
 import React from 'react';
 import './Forms.css'; // Import CSS file for additional styling
 
-function Forms() {
+function BlogPost() {
   return (
     <div className="container">
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }}>
           <div style={{ marginBottom: '15px' }}>
-            <h2>Blog Post Details</h2>
+            <h2>Blog Post Conclusion Paragraph</h2>
             <p>Provide the main points and tone for your blog post.</p>
           </div>
 
@@ -39,7 +39,7 @@ function Forms() {
           </div>
 
           <button
-            type="submit"
+            type="submit" id='submit-btn'
           >
             Generate
           </button>
@@ -58,4 +58,4 @@ function Forms() {
   );
 }
 
-export default Forms;
+export default BlogPost;

@@ -49,7 +49,7 @@ function AmazonPfeature() {
             />
           </div>
 
-          <button type="submit">
+          <button type="submit" id='submit-btn'>
             Generate
           </button>
         </form>

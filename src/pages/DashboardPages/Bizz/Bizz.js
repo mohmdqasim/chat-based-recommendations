@@ -1,16 +1,16 @@
 import React from "react";
-import {Container, Typography, Box, TextField, Select, MenuItem, Button, FormControl, InputLabel, Grid} from "@mui/material";
+import {Container, Typography, Box, TextField, Grid} from "@mui/material";
 import "./Bizz.scss";
 const Bizz = () => {
-  const [fullName, setFullName] = React.useState("Chandan");
-  const [id, setId] = React.useState("Chandan@coditas.com");
-  const [country, setCountry] = React.useState("India");
-  const [lastName, setLastName] = React.useState("Mishra");
-  const [userID, setUserID] = React.useState("Chandan_m");
-  const [state, setState] = React.useState("Maharashtra");
-  const [city, setCity] = React.useState("Pune");
-  const [phoneNumber, setPhoneNumber] = React.useState("");
-  const [referenceCode, setReferenceCode] = React.useState("");
+  const [BusinessName, setFullBusinessName] = React.useState("DigiMark Developers");
+  const [BusinessPhoneNumber, setBusinessPhoneNumber] = React.useState("111-333-2222");
+  // const [country, setCountry] = React.useState("Pakistan");
+  const [BusinessAddress, setBusinessAddress] = React.useState("Lahore");
+  const [Industry, setIndustry] = React.useState("IT");
+  // const [state, setState] = React.useState("Maharashtra");
+  // const [city, setCity] = React.useState("Pune");
+  // const [phoneNumber, setPhoneNumber] = React.useState("111-333-2222");
+  const [WebsiteURL, setWebsiteURL] = React.useState("https://digimarkdevelopers.com");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,15 +18,15 @@ const Bizz = () => {
   };
 
   const handleResetAll = () => {
-    setFullName("");
-    setId("");
-    setCountry("");
-    setLastName("");
-    setUserID("");
-    setState("");
-    setCity("");
-    setPhoneNumber("");
-    setReferenceCode("");
+    setFullBusinessName("");
+    setBusinessPhoneNumber("");
+    // setCountry("");
+    setBusinessAddress("");
+    setIndustry("");
+    // setState("");
+    // setCity("");
+    // setPhoneNumber("");
+    setWebsiteURL("");
   };
 
   return (
@@ -41,18 +41,18 @@ const Bizz = () => {
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField label="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} fullWidth margin="normal" variant="standard" />
+              <TextField label="Business Name" value={BusinessName} onChange={(e) => setFullBusinessName(e.target.value)} fullWidth margin="normal" variant="standard" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} fullWidth margin="normal" variant="standard" />
+              <TextField label="Business Address" value={BusinessAddress} onChange={(e) => setBusinessAddress(e.target.value)} fullWidth margin="normal" variant="standard" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="Enter ID" value={id} onChange={(e) => setId(e.target.value)} fullWidth margin="normal" variant="standard" />
+              <TextField label="Business Phone Number" value={BusinessPhoneNumber} onChange={(e) => setBusinessPhoneNumber(e.target.value)} fullWidth margin="normal" variant="standard" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="Your User ID" value={userID} onChange={(e) => setUserID(e.target.value)} fullWidth margin="normal" variant="standard" />
+              <TextField label="Industry" value={Industry} onChange={(e) => setIndustry(e.target.value)} fullWidth margin="normal" variant="standard" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
               <FormControl fullWidth margin="normal" variant="standard">
                 <InputLabel>Country</InputLabel>
                 <Select value={country} onChange={(e) => setCountry(e.target.value)}>
@@ -60,29 +60,29 @@ const Bizz = () => {
                   <MenuItem value="Pakistan">Pakistan</MenuItem>
                 </Select>
               </FormControl>
-            </Grid>
+            </Grid> */}
 
-            <Grid item xs={12} sm={3}>
+            {/* <Grid item xs={12} sm={3}>
               <FormControl fullWidth margin="normal" variant="standard">
                 <InputLabel>State</InputLabel>
                 <Select value={state} onChange={(e) => setState(e.target.value)}>
                   <MenuItem value="Maharashtra">Maharashtra</MenuItem>
                 </Select>
               </FormControl>
-            </Grid>
-            <Grid item xs={12} sm={3}>
+            </Grid> */}
+            {/* <Grid item xs={12} sm={3}>
               <FormControl fullWidth margin="normal" variant="standard">
                 <InputLabel>City</InputLabel>
                 <Select value={city} onChange={(e) => setCity(e.target.value)}>
                   <MenuItem value="Pune">Pune</MenuItem>
                 </Select>
               </FormControl>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Grid> */}
+            {/* <Grid item xs={12} sm={6}>
               <TextField label="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} fullWidth margin="normal" variant="standard" />
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} sm={6}>
-              <TextField label="Reference Code" value={referenceCode} onChange={(e) => setReferenceCode(e.target.value)} fullWidth margin="normal" variant="standard" />
+              <TextField label="Website URL" value={WebsiteURL} onChange={(e) => setWebsiteURL(e.target.value)} fullWidth margin="normal" variant="standard" />
             </Grid>
           </Grid>
           <Box sx={{ display: "flex", justifyContent: "space-between", position: "absolute", alignItems:"center", bottom: "25px", left: "20px", right: "20px" }}>

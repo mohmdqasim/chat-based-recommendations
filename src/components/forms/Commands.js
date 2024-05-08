@@ -1,13 +1,13 @@
 import React from 'react';
 import './Forms.css'; // Import CSS file for additional styling
 
-function Forms() {
+function Commands() {
   return (
     <div className="container">
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }}>
           <div style={{ marginBottom: '15px' }}>
-            <h2>Story Prompt</h2>
+            <h2>Commands</h2>
             <p>Write a creative story about Tobby flying to the moon in Matthew McConaughey's tone of voice.</p>
           </div>
 
@@ -30,7 +30,7 @@ function Forms() {
           </div>
 
           <button
-            type="submit"
+            type="submit" id='submit-btn'
           >
             Generate
           </button>
@@ -49,4 +49,4 @@ function Forms() {
   );
 }
 
-export default Forms;
+export default Commands;
