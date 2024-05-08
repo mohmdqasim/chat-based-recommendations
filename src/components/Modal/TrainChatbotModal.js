@@ -3,9 +3,11 @@ import Modal from 'react-bootstrap/Modal';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab'; // Import Tab here
 import { Link } from 'react-router-dom'; 
+import './ChatbotModal.scss'
 
 
-function TrainChatbotModal({ show, handleClose }) {
+function TrainChatbotModal({ show, handleClose,setModalShow }) {
+
   return (
     <div >
     <Modal className="chatModal" show={show} onHide={handleClose} centered size='lg'>
@@ -27,7 +29,7 @@ function TrainChatbotModal({ show, handleClose }) {
                   <p>Sources which included:</p>
                   <p>0/400000 Character</p>
                 </div>
-                <Link  className='continue' to="../Cards">
+                <Link  className='continue' to="../Cards" onClick={()=>setModalShow(false)}>
                   Next
                 </Link>
               </div>
@@ -50,7 +52,7 @@ function TrainChatbotModal({ show, handleClose }) {
                 <p>Sources which included:</p>
                   <p>0/400000 Character</p>
                 </div>
-                <Link  className='continue' to="../Cards">
+                <Link  className='continue' to="../Cards" onClick={()=>setModalShow(false)}>
                   Next
                 </Link>
               </div>

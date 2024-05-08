@@ -46,7 +46,7 @@ export const Sidebars = (props) => {
         <div className="logo">
           <h5>CHARLI</h5>
         </div>
-        <Menu>
+        <Menu >
           <button className="chatbot" onClick={() => setModalShow(true)}>Start Campaign <img src="/images/add.svg" alt="add" /></button>
           <MenuItem
             onClick={() => handleImageClick(dashboard)}
@@ -83,7 +83,11 @@ export const Sidebars = (props) => {
         </Menu>
       </Sidebar>
       
-      <TrainChatbotModal show={modalShow} handleClose={() => setModalShow(false)} />
+      <TrainChatbotModal show={modalShow} handleClose={() => setModalShow(false)} 
+
+        setModalShow ={setModalShow}
+
+      />
     </>
   );
 };

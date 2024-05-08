@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,Link } from "react";
 import { Outlet } from "react-router-dom";
 import "./layout.scss";
 import { Sidebars } from "../sidebar/Sidebars";
@@ -29,6 +29,7 @@ export const PanelLayout = () => {
             openSidebar ? "hide" : "show"
           }`}
         >
+          <div>
           <button
             onClick={sideBarMenu}
             className={`side-menu-btn fa fa-bars ${
@@ -37,6 +38,7 @@ export const PanelLayout = () => {
           >
             <img src={Bar} alt="bar" />
           </button>
+          </div>
           <header className="panel-header items-center flex content-justify-between">
           </header>
           <div className="panel-main-wrapper">
