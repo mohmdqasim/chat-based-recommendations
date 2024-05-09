@@ -1,8 +1,11 @@
 import React from 'react';
-import './Forms.css'; // Import CSS file for additional styling
+import './Forms.css'; 
+// import { MediaQuery } from 'react-responsive';
 
 function AmazonPfeature() {
+  
   return (
+    
     <div className="container">
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }}>

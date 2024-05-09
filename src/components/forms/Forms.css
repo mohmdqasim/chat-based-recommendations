@@ -33,7 +33,8 @@ button:hover {
 .left-panel {
   margin-left: -40px;
   flex: 1.5;
-  /* padding-top: 0.0in; */
+  padding: 20px;
+
   background-color: white;
 }
 #submit-btn{
@@ -79,4 +80,8 @@ button:hover {
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+}
+.copy-button{
+  margin-top: 340px;
+  margin-left: 270px;
 }

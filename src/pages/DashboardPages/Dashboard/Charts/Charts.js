@@ -110,6 +110,7 @@ export default function Chart() {
           series={state.series}
           type="area"
           height={250}
+        
         />
         <div className="months">
           <p>This Month</p>

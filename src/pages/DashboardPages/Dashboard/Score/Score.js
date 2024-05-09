@@ -3,9 +3,9 @@ import './Score.scss'
 function Score() {
     return (
         <React.Fragment>
-            <div className="score">
+            <div style={{marginLeft:'-13px'}} className="score">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-7">
                         <div className="Scorecard">
                             <h4>Overall Score</h4>
                             <table className="table table-borderless">
@@ -44,7 +44,7 @@ function Score() {
                             </table>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div style={{marginLeft:'-13px'}} className="col-md-5">
                     <div className="Docscard">
                             <h4>Recent Docs</h4>
                             <table className="table table-borderless">
