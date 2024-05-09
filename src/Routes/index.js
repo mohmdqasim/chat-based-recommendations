@@ -75,13 +75,6 @@ export default function index() {
           <Route path="/JobDescription" element={<JobDescription/>} />
           <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas/>} />
           
-
-
-
-
-
-          
-
         </Route>
       </Routes>
     </Router>

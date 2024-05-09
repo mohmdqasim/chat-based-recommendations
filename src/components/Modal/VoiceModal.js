@@ -25,8 +25,8 @@ function ChatbotModal(props) {
                   </form>
                 </Modal.Body>
                   <Modal.Footer>
-                    <button className="back">Back</button>
-                    <button className="continuee">Continue</button>
+                    <button className="continue">Back</button>
+                    <button className="continue">Continue</button>
                     </Modal.Footer>
             </Modal>
         </div>

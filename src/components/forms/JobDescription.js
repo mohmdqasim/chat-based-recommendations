@@ -103,7 +103,7 @@ function JobDescription() {
         </form>
       </div>
 
-      <div style={{height: 900}} className="right-panel">
+      <div style={{height: 800,marginTop:'70px'}} className="right-panel">
         {/* Response Window */}
         <div style={{height: 750}} className="response-window">
           {/* Placeholder for response content */}

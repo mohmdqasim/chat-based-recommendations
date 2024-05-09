@@ -3,7 +3,10 @@
 }
 
 h2 {
-  color: #603813; 
+  color: black; 
+}
+label{
+  margin-bottom: 5px;
 }
          
 /* button {
@@ -34,25 +37,25 @@ button:hover {
   background-color: white;
 }
 #submit-btn{
-  background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
-  margin: 5px;
+  background-image: radial-gradient(circle at 10% 20%, rgb(28, 142, 210) 0%, rgb(113, 192, 244) 47.3%, rgb(139, 238, 230) 88.4%);
   padding: 10px 35px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;            
-  box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  border-color: white;
 
 }
 
 .right-panel {
-  height: 100vh;
+  margin-top: '70px';
+  height: 80vh;
   flex: 1.6;
   padding-bottom: 28px;
-  background-color: #6038139a;
+  background-image: radial-gradient(circle at 10% 20%, rgb(28, 142, 210) 0%, rgb(113, 192, 244) 47.3%, rgb(139, 238, 230) 88.4%);
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center align items vertically */
@@ -60,14 +63,15 @@ button:hover {
 }
 
 .response-window {
+  border-color: black;
   height: 120%;
   margin-top: 20px;
   width: 95%; /* Adjust width as needed */
   max-width: 800px; /* Limit maximum width */
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.90);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   overflow-y: auto; /*Enable vertical scrollbar if content exceeds window height*/
 }
 

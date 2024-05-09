@@ -23,7 +23,7 @@ const cardStyle = {
   border: '2px solid #ccc',
   borderRadius: 8,
   overflow: 'hidden',
-  transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
+  transition: 'background-color 0.1s ease, box-shadow 0.3s ease',
 };
 
 export default function Cards() {
@@ -70,8 +70,9 @@ export default function Cards() {
           key={card.id}
           style={{
             ...cardStyle,
-            backgroundColor: isHovered(card.id) ? '#0000FF' : 'white',
-            boxShadow: isHovered(card.id) ? '0 0 10px rgba(0, 0, 0, 0)' : 'none',
+            // backgroundColor: isHovered(card.id) ? '#0000FF' : 'white',
+            backgroundImage: isHovered(card.id) ? 'linear-gradient(112.1deg, rgb(77, 238, 253) 0.7%, rgb(3, 151, 232) 26.1%, rgb(47, 31, 116) 95.7%)' : 'none',
+            // boxShadow: isHovered(card.id) ? '0 0 10px rgba(0, 0, 0, 0)' : 'none',
           }}
           onClick={() => handleCardClick(`/${card.id}`)}
           onMouseEnter={() => handleMouseEnter(card.id)}
