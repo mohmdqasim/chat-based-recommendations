@@ -7,6 +7,8 @@ import bank from "../../assets/images/bank.svg";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 import { Link, useLocation } from "react-router-dom";
 import TrainChatbotModal from '../Modal/TrainChatbotModal';
+import CardsImage from '../../assets/images/edit.svg'
+import Cards from '../Cards'
 
 
 
@@ -44,7 +46,8 @@ export const Sidebars = (props) => {
     <>
       <Sidebar>
         <div className="logo">
-          <h5>CHARLI</h5>
+        <Link to="/"> <h5>CHARLI</h5></Link>
+         
         </div>
         <Menu >
           <button className="chatbot" onClick={() => setModalShow(true)}>Start Campaign <img src="/images/add.svg" alt="add" /></button>
@@ -56,6 +59,17 @@ export const Sidebars = (props) => {
             <img src={dashboard} alt="icon" />
             <p>Dashboard</p>
           </MenuItem>
+
+          <MenuItem
+            onClick={() => handleImageClick(CardsImage)}
+            component={<Link to="/Cards" />}
+            className={activeImage === CardsImage ? "active-link" : ""}
+          >
+            <img src={CardsImage} alt="icon" />
+            <p>Create</p>
+          </MenuItem>
+
+
           <MenuItem
             onClick={() => handleImageClick(voice)}
             component={<Link to="/voice" />}

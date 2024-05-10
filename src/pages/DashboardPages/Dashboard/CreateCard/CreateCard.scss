@@ -5,6 +5,7 @@
         padding: 40px 20px;
         border: 1px solid #ECECEC;
         border-radius: 10px;
+        
         h2{
             font-size: 32px;
             margin-bottom: 15px;
@@ -34,12 +35,14 @@
             }
         }
         .cards{
+            
             display: flex;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
             margin-top: 10px;
             .mini-card{
+                min-height: 130px;
                 width: 49%;
                 background: #fff;
                 padding: 15px;
