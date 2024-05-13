@@ -24,18 +24,6 @@ function CreateCard() {
     { text: 'Job Description', link: '/JobDescription' },
     { text: 'LinkedIn Topic Ideas', link: '/LinkedInTopicIdeas' },
     
-    
-
-
-
-
-
-
-    
-
-
-    
-
   ];
 
   // Function to handle input change

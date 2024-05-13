@@ -3,9 +3,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
+import { colors } from '@mui/material';
 
 const containerStyle = {
   display: 'flex',
+  minHeight: '530px', 
   flexWrap: 'wrap',
   justifyContent: 'center',
   gap: '50px',
@@ -15,15 +17,15 @@ const containerStyle = {
 
 const cardStyle = {
   maxWidth: 275,
-  height: 'auto',
-  marginBottom: 30,
-  marginTop: 7,
+  // height: 'auto',
+  // marginBottom: 30,
+  // marginTop: 7,
   cursor: 'pointer',
   padding: '16px',
   border: '2px solid #ccc',
   borderRadius: 8,
-  overflow: 'hidden',
-  transition: 'background-color 0.1s ease, box-shadow 0.3s ease',
+  // overflow: 'hidden',
+  // transition: 'background-color 0.1s ease, box-shadow 0.3s ease',
 };
 
 export default function Cards() {
