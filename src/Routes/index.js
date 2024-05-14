@@ -29,6 +29,7 @@ import FacebookAds from "../components/forms/FacebookAds";
 import JobDescription from "../components/forms/JobDescription";
 import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
 import SignIn from "../components/UserAuthentication/SignIn";
+import Register from '../components/Register/Register'
 
 const isAuthenticated = true;
 
@@ -52,7 +53,7 @@ export default function index() {
             </PrivateRoute>
           }
         >
-          <Route index element={<Dashboard />} />
+          <Route path="Dashboard" index element={<Dashboard />} />
           <Route path="/voice" element={<Voice />} />
           <Route path="/bizz" element={<Bizz />} />
           <Route path="/bank" element={<Bank />} />
@@ -75,6 +76,8 @@ export default function index() {
           <Route path="/JobDescription" element={<JobDescription/>} />
           <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas/>} />
           <Route path="/SignIn" element={<SignIn/>} />
+          <Route path="/" element={<Register/>} />
+
 
           
         </Route>
