@@ -1,3 +1,4 @@
+// index.js
 import React from "react";
 import {
   Route,
@@ -30,6 +31,7 @@ import JobDescription from "../components/forms/JobDescription";
 import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
 import SignIn from "../components/UserAuthentication/SignIn";
 import Register from '../components/Register/Register'
+import Login from '../components/Login/Login'
 
 const isAuthenticated = true;
 
@@ -47,11 +49,11 @@ export default function index() {
         <Route
           path="/"
           errorElement={<ErrorPage />}
-          element={
-            <PrivateRoute isAuthenticated={isAuthenticated}>
-              <PanelLayout />
-            </PrivateRoute>
-          }
+          // element={
+          //   <PrivateRoute isAuthenticated={isAuthenticated}>
+          //     <PanelLayout />
+          //   </PrivateRoute>
+          // }
         >
           <Route path="Dashboard" index element={<Dashboard />} />
           <Route path="/voice" element={<Voice />} />
@@ -77,6 +79,10 @@ export default function index() {
           <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas/>} />
           <Route path="/SignIn" element={<SignIn/>} />
           <Route path="/" element={<Register/>} />
+          <Route path="/Login" element={<Login/>} />
+          <Route path="/Register" element={<Register/>} />
+
+
 
 
           

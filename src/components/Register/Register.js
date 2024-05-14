@@ -1,15 +1,14 @@
-// Register.js
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+// import axios from "axios";
 import basestyle from "../Base.module.css";
 import registerstyle from "./Register.module.css";
-import axios from "axios";
-import { useNavigate, NavLink } from "react-router-dom";
+
 
 const Register = () => {
   const navigate = useNavigate();
 
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
   const [user, setUserDetails] = useState({
     fname: "",
     lname: "",
@@ -27,114 +26,112 @@ const Register = () => {
   };
 
   const validateForm = (values) => {
-    const error = {};
+    const errors = {};
     const regex = /^[^\s+@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
     if (!values.fname) {
-      error.fname = "First Name is required";
+      errors.fname = "First Name is required";
     }
     if (!values.lname) {
-      error.lname = "Last Name is required";
+      errors.lname = "Last Name is required";
     }
     if (!values.email) {
-      error.email = "Email is required";
+      errors.email = "Email is required";
     } else if (!regex.test(values.email)) {
-      error.email = "This is not a valid email format!";
+      errors.email = "Invalid email format";
     }
     if (!values.password) {
-      error.password = "Password is required";
+      errors.password = "Password is required";
     } else if (values.password.length < 4) {
-      error.password = "Password must be more than 4 characters";
-    } else if (values.password.length > 10) {
-      error.password = "Password cannot exceed more than 10 characters";
+      errors.password = "Password must be at least 4 characters long";
     }
     if (!values.cpassword) {
-      error.cpassword = "Confirm Password is required";
+      errors.cpassword = "Confirm Password is required";
     } else if (values.cpassword !== values.password) {
-      error.cpassword = "Confirm password and password should be same";
+      errors.cpassword = "Passwords do not match";
     }
-    return error;
+
+    return errors;
   };
 
-  const signupHandler = (e) => {
+  const signupHandler = async (e) => {
     e.preventDefault();
-    setFormErrors(validateForm(user));
-    setIsSubmit(true);
-    navigate('/login')
-  };
+    const errors = validateForm(user);
+    setFormErrors(errors);
 
-  useEffect(() => {
-    const registerUser = async () => {
+    if (Object.keys(errors).length === 0) {
       try {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-          const response = await axios.post("http://localhost:9002/signup/", user);
-          alert(response.data.message);
-          navigate("/login", { replace: true });
-        }
+        // alert(response.data.message); // Display success message
+        navigate("/login"); // Redirect to login page after successful registration
       } catch (error) {
-        alert(error.response.data.message);
+        alert(error.response.data.message); // Display error message if registration fails
       }
-    };
-    
-    registerUser();
-  }, [formErrors, isSubmit, navigate, user]);
+    }
+  };
 
   return (
-    <>
-      <div className={registerstyle.register}>
-        <form>
-          <h1>Create your account</h1>
-          <input
-            type="text"
-            name="fname"
-            id="fname"
-            placeholder="First Name"
-            onChange={changeHandler}
-            value={user.fname}
-          />
-          <p className={basestyle.error}>{formErrors.fname}</p>
-          <input
-            type="text"
-            name="lname"
-            id="lname"
-            placeholder="Last Name"
-            onChange={changeHandler}
-            value={user.lname}
-          />
-          <p className={basestyle.error}>{formErrors.lname}</p>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            onChange={changeHandler}
-            value={user.email}
-          />
-          <p className={basestyle.error}>{formErrors.email}</p>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            onChange={changeHandler}
-            value={user.password}
-          />
-          <p className={basestyle.error}>{formErrors.password}</p>
-          <input
-            type="password"
-            name="cpassword"
-            id="cpassword"
-            placeholder="Confirm Password"
-            onChange={changeHandler}
-            value={user.cpassword}
-          />
-          <p className={basestyle.error}>{formErrors.cpassword}</p>
-          <button className={basestyle.button_common} onClick={signupHandler}>
-           Register
-           </button>
-        </form>
-        <NavLink to="/login">Already registered? Login</NavLink>
-      </div>
-    </>
+    <div className={registerstyle.register}>
+      <form>
+        <h1>Create your account</h1>
+        <input
+          type="text"
+          name="fname"
+          placeholder="First Name"
+          onChange={changeHandler}
+          value={user.fname}
+        />
+        {formErrors.fname && <p className={basestyle.error}>{formErrors.fname}</p>}
+        <input
+          type="text"
+          name="lname"
+          placeholder="Last Name"
+          onChange={changeHandler}
+          value={user.lname}
+        />
+        {formErrors.lname && <p className={basestyle.error}>{formErrors.lname}</p>}
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={changeHandler}
+          value={user.email}
+        />
+        {formErrors.email && <p className={basestyle.error}>{formErrors.email}</p>}
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={changeHandler}
+          value={user.password}
+        />
+        {formErrors.password && <p className={basestyle.error}>{formErrors.password}</p>}
+        <input
+          type="password"
+          name="cpassword"
+          placeholder="Confirm Password"
+          onChange={changeHandler}
+          value={user.cpassword}
+        />
+        {formErrors.cpassword && <p className={basestyle.error}>{formErrors.cpassword}</p>}
+        <button type="submit" className={basestyle.button_common} onClick={signupHandler}>
+          Register
+        </button>
+      </form>
+      <p>
+        Already registered? <Link to="/login" style={{color:'green'}}>Login</Link>
+      </p>
+      <p>
+        Or
+      </p>
+      <Link to= "" className={basestyle.button_continue_google} >
+          Continue With Google
+        </Link>
+        <Link to="" className={basestyle.button_continue_facebook} >
+          Continue With Facebook
+        </Link>
+       
+
+    </div>
   );
 };
 

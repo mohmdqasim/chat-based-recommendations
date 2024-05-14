@@ -40,16 +40,13 @@ const Login = ({ setUserState }) => {
     e.preventDefault();
     setFormErrors(validateForm(user));
     setIsSubmit(true);
-    navigate('/profile')
+    navigate('/Dashboard')
   };
 
   useEffect(() => {
     const loginUser = async () => {
       try {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-          const response = await axios.post("http://localhost:9002/login", user);
-          alert(response.data.message);
-          setUserState(response.data.user);
           navigate("/profile", { replace: true });
         }
       } catch (error) {
@@ -86,7 +83,11 @@ const Login = ({ setUserState }) => {
           Login
         </button>
       </form>
-      <NavLink to="/signup">Not yet registered? Register Now</NavLink>
+      {/* <NavLink to="/Register" style={{ color: 'black' }}>Not yet registered? Register Now</NavLink> */}
+      <p>
+      Not yet registered? <NavLink to="/Register" style={{color:'green'}}>Register</NavLink>
+      </p>
+
     </div>
   );
 };

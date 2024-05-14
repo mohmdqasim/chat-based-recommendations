@@ -1,13 +1,38 @@
 .button_common {
     background-color: olivedrab;
     color: white;
-    padding: 15px 30px;
+    padding: 5px 30px;
     border: none;
     font-size: 22px;
     border-radius: 15px;
     margin: 1rem;
     width: 90%;
 }
+
+.button_continue_google {
+    background-color: blue;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    font-size: 13px;
+    border-radius: 15px;
+    margin: 1rem;
+    width: 45%;
+    margin-left: -6px;
+}
+
+.button_continue_facebook {
+    background-color: blue;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    font-size: 13px;
+    border-radius: 15px;
+    margin: 1rem;
+    width: 50%;
+    margin-left: -8px;
+}
+
 .error {
     color: red;
     text-align: left;
