@@ -9,6 +9,7 @@ import { Link, useLocation } from "react-router-dom";
 import TrainChatbotModal from '../Modal/TrainChatbotModal';
 import CardsImage from '../../assets/images/edit.svg'
 import Cards from '../Cards'
+import SignIn from '../../components/SignIn'
 
 
 
@@ -93,6 +94,15 @@ export const Sidebars = (props) => {
           >
             <img src={bank} alt="icon" />
             <p>Contant bank</p>
+          </MenuItem>
+          {/* --------- */}
+          <MenuItem
+            onClick={() => handleImageClick(bank)}
+            component={<Link to="/SignIn" />}
+            className={activeImage === bank ? "active-link" : ""}
+          >
+            <img src={bank} alt="icon" />
+            <p>signIn</p>
           </MenuItem>
         </Menu>
       </Sidebar>
