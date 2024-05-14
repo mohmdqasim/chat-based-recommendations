@@ -6,10 +6,12 @@ import bizz from "../../assets/images/bizz.svg";
 import bank from "../../assets/images/bank.svg";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 import { Link, useLocation } from "react-router-dom";
-import TrainChatbotModal from '../Modal/TrainChatbotModal';
-import CardsImage from '../../assets/images/edit.svg'
-import Cards from '../Cards'
-import SignIn from '../../components/SignIn'
+import TrainChatbotModal from "../Modal/TrainChatbotModal";
+import CardsImage from "../../assets/images/edit.svg";
+// import Cards from "../Cards";
+// import SignIn from '../../components/SignIn'
+// import SignIn from "../UserAuthentication/SignIn";
+
 
 
 
@@ -102,7 +104,7 @@ export const Sidebars = (props) => {
             className={activeImage === bank ? "active-link" : ""}
           >
             <img src={bank} alt="icon" />
-            <p>signIn</p>
+            <p>sigIn</p>
           </MenuItem>
         </Menu>
       </Sidebar>

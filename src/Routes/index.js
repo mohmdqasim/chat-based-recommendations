@@ -28,7 +28,7 @@ import EmailSubjectLines from "../components/forms/EmailSubjectLines";
 import FacebookAds from "../components/forms/FacebookAds";
 import JobDescription from "../components/forms/JobDescription";
 import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
-
+import SignIn from "../components/UserAuthentication/SignIn";
 
 const isAuthenticated = true;
 
@@ -74,6 +74,8 @@ export default function index() {
           <Route path="/FacebookAds" element={<FacebookAds/>} />
           <Route path="/JobDescription" element={<JobDescription/>} />
           <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas/>} />
+          <Route path="/SignIn" element={<SignIn/>} />
+
           
         </Route>
       </Routes>
