@@ -49,14 +49,14 @@ export const Sidebars = (props) => {
     <>
       <Sidebar>
         <div className="logo">
-        <Link to="/"> <h5>CHARLI</h5></Link>
+        <Link to="/Dashboard"> <h5>CHARLI</h5></Link>
          
         </div>
         <Menu >
           <button className="chatbot" onClick={() => setModalShow(true)}>Start Campaign <img src="/images/add.svg" alt="add" /></button>
           <MenuItem
             onClick={() => handleImageClick(dashboard)}
-            component={<Link to="/" />}
+            component={<Link to="/Dashboard" />}
             className={activeImage === dashboard ? "active-link" : ""}
           >
             <img src={dashboard} alt="icon" />
@@ -97,15 +97,7 @@ export const Sidebars = (props) => {
             <img src={bank} alt="icon" />
             <p>Contant bank</p>
           </MenuItem>
-          {/* --------- */}
-          <MenuItem
-            onClick={() => handleImageClick(bank)}
-            component={<Link to="/SignIn" />}
-            className={activeImage === bank ? "active-link" : ""}
-          >
-            <img src={bank} alt="icon" />
-            <p>sigIn</p>
-          </MenuItem>
+        
         </Menu>
       </Sidebar>
       

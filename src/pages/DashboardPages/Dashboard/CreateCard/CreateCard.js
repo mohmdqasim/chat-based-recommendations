@@ -75,25 +75,25 @@ function CreateCard() {
               </div>
               <div className="cards">
 
-                    <Link to='AmazonProduct' className="mini-card">
+                    <Link to='/AmazonProduct' className="mini-card">
                         <a href="">
                         <h4>Amazon Product Description</h4>
                         <p>Create compelling product descriptions for Amazon listings.</p>
                         </a>
                     </Link>
-                    <Link to='BlogPost' className="mini-card">
+                    <Link to='/BlogPost' className="mini-card">
                         <a href="">
                         <h4>Blog Post Conclusion Paragraph</h4>
                         <p>Wrap up your blog posts with an engaging conclusion paragraph.</p>
                         </a>
                     </Link>
-                    <Link to='Commands' className="mini-card">
+                    <Link to='/Commands' className="mini-card">
                         <a href="">
                         <h4>Commands</h4>
                         <p>Tell charli exactly what to write with a command.</p>
                         </a>
                     </Link>
-                    <Link to='CreativeStory' className="mini-card">
+                    <Link to='/CreativeStory' className="mini-card">
                         <a href="">
                         <h4>Creative Story</h4>
                         <p>Write creative stories to engage readers.</p>

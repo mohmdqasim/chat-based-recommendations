@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import basestyle from "../Base.module.css";
 import loginstyle from "./Login.module.css";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate, NavLink } from "react-router-dom";
 
 const Login = ({ setUserState }) => {
@@ -85,7 +85,7 @@ const Login = ({ setUserState }) => {
       </form>
       {/* <NavLink to="/Register" style={{ color: 'black' }}>Not yet registered? Register Now</NavLink> */}
       <p>
-      Not yet registered? <NavLink to="/Register" style={{color:'green'}}>Register</NavLink>
+      Not yet registered? <NavLink to="/  `" style={{color:'green'}}>Register</NavLink>
       </p>
 
     </div>

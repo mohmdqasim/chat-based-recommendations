@@ -1,4 +1,3 @@
-// index.js
 import React from "react";
 import {
   Route,
@@ -33,6 +32,7 @@ import SignIn from "../components/UserAuthentication/SignIn";
 import Register from '../components/Register/Register'
 import Login from '../components/Login/Login'
 
+
 const isAuthenticated = true;
 
 const PrivateRoute = ({ isAuthenticated, children }) => {
@@ -46,16 +46,25 @@ export default function index() {
   return (
     <Router>
       <Routes>
+      <Route path="/" element={<Register/>} />
+      <Route path="/Login" element={<Login/>} />
+
+
         <Route
           path="/"
           errorElement={<ErrorPage />}
-          // element={
-          //   <PrivateRoute isAuthenticated={isAuthenticated}>
-          //     <PanelLayout />
-          //   </PrivateRoute>
-          // }
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <PanelLayout />
+            </PrivateRoute>
+          }
+
+          
         >
-          <Route path="Dashboard" index element={<Dashboard />} />
+
+        
+
+          <Route path="/Dashboard" index element={<Dashboard />} />
           <Route path="/voice" element={<Voice />} />
           <Route path="/bizz" element={<Bizz />} />
           <Route path="/bank" element={<Bank />} />
@@ -78,10 +87,6 @@ export default function index() {
           <Route path="/JobDescription" element={<JobDescription/>} />
           <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas/>} />
           <Route path="/SignIn" element={<SignIn/>} />
-          <Route path="/" element={<Register/>} />
-          <Route path="/Login" element={<Login/>} />
-          <Route path="/Register" element={<Register/>} />
-
 
 
 
@@ -91,4 +96,3 @@ export default function index() {
     </Router>
   );
 }
-

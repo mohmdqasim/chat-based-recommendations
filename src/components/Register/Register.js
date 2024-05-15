@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import axios from "axios";
+import { googleProvider, facebookProvider, auth } from "../UserAuthentication/Config"; // Import Firebase auth and providers
 import basestyle from "../Base.module.css";
-import registerstyle from "./Register.module.css";
-
+import registerstyle from "../Register/Register.module.css";
+import { signInWithPopup } from "firebase/auth";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -61,12 +61,27 @@ const Register = () => {
 
     if (Object.keys(errors).length === 0) {
       try {
-        // alert(response.data.message); // Display success message
-        navigate("/login"); // Redirect to login page after successful registration
+        // Perform registration logic here (e.g., axios post request)
+        // Upon successful registration, navigate to dashboard
+        // Simulating a successful registration
+        localStorage.setItem("email", user.email); // Save email to localStorage
+        navigate("/dashboard"); // Redirect to the dashboard page
       } catch (error) {
-        alert(error.response.data.message); // Display error message if registration fails
+        // Handle registration failure (e.g., display error message)
+        alert(error.response.data.message);
       }
     }
+  };
+
+  const handleClick = (provider) => {
+    signInWithPopup(auth, provider)
+      .then((data) => {
+        localStorage.setItem("email", data.user.email);
+        navigate("/dashboard"); // Navigate to the dashboard page after sign-in
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
@@ -118,19 +133,21 @@ const Register = () => {
         </button>
       </form>
       <p>
-        Already registered? <Link to="/login" style={{color:'green'}}>Login</Link>
+        Already registered? <Link to="/login" style={{ color: "green" }}>Login</Link>
       </p>
-      <p>
-        Or
-      </p>
-      <Link to= "" className={basestyle.button_continue_google} >
-          Continue With Google
-        </Link>
-        <Link to="" className={basestyle.button_continue_facebook} >
-          Continue With Facebook
-        </Link>
-       
-
+      <p style={{ marginLeft: "-37px", fontSize: "17px" }}>Or</p>
+      <button
+        className={basestyle.button_continue_google}
+        onClick={() => handleClick(googleProvider)}
+      >
+        Continue With Google
+      </button>
+      <button
+        className={basestyle.button_continue_facebook}
+        onClick={() => handleClick(facebookProvider)}
+      >
+        Continue With Facebook
+      </button>
     </div>
   );
 };

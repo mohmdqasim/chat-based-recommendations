@@ -3,11 +3,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
-// import { colors } from '@mui/material';
 
 const containerStyle = {
   display: 'flex',
-  minHeight: '530px', 
+  // minHeight: '530px',
   flexWrap: 'wrap',
   justifyContent: 'center',
   gap: '50px',
@@ -17,15 +16,13 @@ const containerStyle = {
 
 const cardStyle = {
   maxWidth: 275,
-  // height: 'auto',
-  // marginBottom: 30,
-  // marginTop: 7,
+  maxHeight: 170,
   cursor: 'pointer',
-  padding: '16px',
+  padding: '14px',
   border: '2px solid #ccc',
-  borderRadius: 8,
-  // overflow: 'hidden',
-  // transition: 'background-color 0.1s ease, box-shadow 0.3s ease',
+  borderRadius: 18,
+  boxShadow: '0px 3px 10px rgba(0, 0, 0, 0.1)',
+  transition: 'background-color 0.7s, color 0.9s', // Add CSS transition for color change
 };
 
 export default function Cards() {
@@ -48,6 +45,7 @@ export default function Cards() {
   const isHovered = (cardId) => cardId === hoveredCard;
 
   const cards = [
+    // Your card data array here
     { id: 'AmazonProduct', title: 'Amazon Product Description', description: 'Create compelling product descriptions for Amazon listings.' },
     { id: 'AmazonPfeature', title: 'Amazon Product Features (bullets)', description: 'Create key feature and benefit bullet points for Amazon listings under the "about this item" section.' },
     { id: 'BlogPost', title: 'Blog Post Conclusion Paragraph', description: 'Wrap up your blog posts with an engaging conclusion paragraph.' },
@@ -72,24 +70,26 @@ export default function Cards() {
           key={card.id}
           style={{
             ...cardStyle,
-            // backgroundColor: isHovered(card.id) ? '#0000FF' : 'white',
-            backgroundImage: isHovered(card.id) ? 'linear-gradient(112.1deg, rgb(77, 238, 253) 0.7%, rgb(3, 151, 232) 26.1%, rgb(47, 31, 116) 95.7%)' : 'none',
-            // boxShadow: isHovered(card.id) ? '0 0 10px rgba(0, 0, 0, 0)' : 'none',
+            backgroundImage: isHovered(card.id)
+              ? 'linear-gradient(112.1deg, rgb(77, 238, 253) 0.7%, rgb(3, 151, 232) 26.1%, rgb(47, 31, 116) 95.7%)'
+              : 'none',
+            color: isHovered(card.id) ? 'white' : 'black',
           }}
           onClick={() => handleCardClick(`/${card.id}`)}
           onMouseEnter={() => handleMouseEnter(card.id)}
           onMouseLeave={handleMouseLeave}
         >
-          <Card>
-            <CardContent>
-              <Typography variant="h5" component="div">
-                {card.title}
-              </Typography>
-              <Typography variant="body2">
-                {card.description}
-              </Typography>
-            </CardContent>
-          </Card>
+          
+          <CardContent>
+          
+            <Typography style={{marginTop:'-15px'}} variant="h5" component="div">
+              {card.title}
+            </Typography>
+            <Typography variant="body2">
+              {card.description}
+            </Typography>
+          </CardContent>
+          
         </div>
       ))}
     </div>

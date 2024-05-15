@@ -4,7 +4,7 @@ import "./layout.scss";
 import { Sidebars } from "../sidebar/Sidebars";
 import Bar from "../../assets/images/bar.png";
 
-export const PanelLayout = () => {
+export const PanelLayout = ({isAuthenticated}) => {
   const [openSidebar, setOpenSidebar] = useState(true);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -20,6 +20,7 @@ export const PanelLayout = () => {
   }, []);
   return (
     <>
+
       <div className="panel-wrapper flex flex-wrap column-direction">
         <div className={`panel-sidebar ${openSidebar ? "hide" : "show"}`}>
           <Sidebars />
@@ -45,7 +46,9 @@ export const PanelLayout = () => {
            {loading ? <div className="loader"></div> : <Outlet /> } 
           </div>
         </div>
+
       </div>
+
     </>
   );
 };

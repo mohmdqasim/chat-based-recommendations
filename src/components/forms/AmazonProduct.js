@@ -1,7 +1,8 @@
+// AmazonProduct
 import React from 'react';
 import './Forms.css'; // Import CSS file for additional styling
 
-function Forms() {
+function AmazonProduct() {
   return (
     <div className="container">
       <div className="left-panel">
@@ -58,4 +59,4 @@ function Forms() {
   );
 }
 
-export default Forms;
+export default AmazonProduct;
