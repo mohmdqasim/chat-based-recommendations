@@ -27,7 +27,7 @@ function ChatbotModal(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <button className='chatbot' onClick={handleTrainModalShow}>
-                    Start your Campaign <img src="/images/add.svg" alt="Add" />
+                     <img src="/images/add.svg" alt="Add" />
                     </button>
                 </Modal.Body>
             </Modal>
