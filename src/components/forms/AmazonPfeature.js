@@ -5,7 +5,7 @@ import './Forms.css';
 function AmazonPfeature() {
   
   return (
-    yyhuhyu
+
     <div className="container">
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }}>
