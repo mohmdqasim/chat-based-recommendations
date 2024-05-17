@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Forms.css'; 
-// import { MediaQuery } from 'react-responsive';
+import Autocomplete from '../../components/AutoComplete/AutoComplete';
 
 function AmazonPfeature() {
-  
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    // Load voices from localStorage on component mount
+    const savedVoices = JSON.parse(localStorage.getItem('voices')) || [];
+    setVoices(savedVoices);
+  }, []);
+
   return (
-    
     <div className="container">
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }}>
           <div style={{ marginBottom: '15px' }}>
-            <h2>Amazon Product Description</h2>
+            <h2>Amazon Product Features</h2>
             <p>Create compelling product descriptions for Amazon listings.</p>
           </div>
 
@@ -44,11 +50,10 @@ function AmazonPfeature() {
 
           <div style={{ marginBottom: '15px' }}>
             <label htmlFor="tone-of-voice">Tone of Voice:</label>
-            <input
-              id="tone-of-voice"
-              type="text"
-              placeholder="Select a tone..."
-              style={{ width: '100%', padding: '9px' }}
+            <Autocomplete
+              suggestions={voices}
+              onInputChange={(input) => {}} // Empty function since we are not using toneOfVoice
+              placeholder="Witty, Friendly"
             />
           </div>
 
@@ -59,10 +64,7 @@ function AmazonPfeature() {
       </div>
 
       <div className="right-panel">
-        {/* Response Window */}
-        <div  className="response-window">
-          {/* Placeholder for response content */}
-          {/* "No output generated yet." */}
+        <div className="response-window">
           No output generated yet.
         </div>
       </div>

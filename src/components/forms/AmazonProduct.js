@@ -1,8 +1,17 @@
-// AmazonProduct
-import React from 'react';
-import './Forms.css'; // Import CSS file for additional styling
+// src/Forms/AmazonProduct.js
+import React, { useState, useEffect } from 'react';
+import './Forms.css';
+import Autocomplete from '../../components/AutoComplete/AutoComplete';
 
 function AmazonProduct() {
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    // Load voices from localStorage on component mount
+    const savedVoices = JSON.parse(localStorage.getItem('voices')) || [];
+    setVoices(savedVoices);
+  }, []);
+
   return (
     <div className="container">
       <div className="left-panel">
@@ -33,25 +42,21 @@ function AmazonProduct() {
 
           <div style={{ marginBottom: '15px' }}>
             <label htmlFor="tone-of-voice">Tone of Voice:</label>
-            <input
-              id="tone-of-voice"
-              type="text"
-              placeholder="Witty,Friendly"
-              style={{ width: '100%', padding: '9px' }}
+            <Autocomplete
+              suggestions={voices}
+              onInputChange={(input) => {}} // Empty function since we are not using toneOfVoice
+              placeholder="Witty, Friendly"
             />
           </div>
 
-          <button id='submit-btn' type="submit">
+          <button id="submit-btn" type="submit">
             Generate
           </button>
         </form>
       </div>
 
       <div className="right-panel">
-        {/* Response Window */}
-        <div  className="response-window">
-          {/* Placeholder for response content */}
-          {/* "No output generated yet." */}
+        <div className="response-window">
           No output generated yet.
         </div>
       </div>

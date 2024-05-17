@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './Forms.css'; // Import CSS file for additional styling
+import Autocomplete from '../../components/AutoComplete/AutoComplete';
 
 function BlogPost() {
+
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    // Load voices from localStorage on component mount
+    const savedVoices = JSON.parse(localStorage.getItem('voices')) || [];
+    setVoices(savedVoices);
+  }, []);
   return (
     <div className="container">
       <div className="left-panel">
@@ -30,11 +39,10 @@ function BlogPost() {
 
           <div style={{ marginBottom: '15px' }}>
             <label htmlFor="tone-of-voice">Tone of Voice:</label>
-            <input
-              id="tone-of-voice"
-              type="text"
+            <Autocomplete
+              suggestions={voices}
+              onInputChange={(input) => {}} // Empty function since we are not using toneOfVoice
               placeholder="Motivational"
-              style={{ width: '100%', padding: '9px' }}
             />
           </div>
 

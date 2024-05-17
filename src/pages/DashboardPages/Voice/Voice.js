@@ -1,17 +1,32 @@
 // src/Voice.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Voice.scss';
 import VoiceModal from '../../../components/Modal/VoiceModal';
 
 export default function Voice() {
   const [modalShow, setModalShow] = useState(false);
   const [tabs, setTabs] = useState(0);
-  const [voices, setVoices] = useState([]); // State to store voices
+  const [voices, setVoices] = useState(() => {
+    // Initialize voices from localStorage
+    const storedVoices = localStorage.getItem('voices');
+    return storedVoices ? JSON.parse(storedVoices) : [];
+  });
+
+  useEffect(() => {
+    // Store voices in localStorage whenever it changes
+    localStorage.setItem('voices', JSON.stringify(voices));
+  }, [voices]);
 
   const handleAddVoice = (newVoice) => {
     setVoices([...voices, newVoice]);
   };
 
+  const handleDeleteVoice = (index) => {
+    const updatedVoices = voices.filter((_, i) => i !== index);
+    setVoices(updatedVoices);
+  };
+
+  
   const tabButtons = [
     "Voices", 
     "Knowledge Pool"
@@ -34,7 +49,10 @@ export default function Voice() {
         {voices.length > 0 ? (
           <ul>
             {voices.map((voice, index) => (
-              <li key={index}>{voice}</li>
+              <li key={index} style={{border:'1px solid #ccc'}}>
+                {voice}
+                <button className="delete" onClick={() => handleDeleteVoice(index)}>Delete</button>
+              </li>
             ))}
           </ul>
         ) : (
@@ -70,7 +88,7 @@ export default function Voice() {
         <div className="tabs">
           <div className="top_tab_bar">
             <ul>
-              <li>
+              <li className="li_style">
                 <button
                   onClick={() => setTabs(0)}
                   className={tabs === 0 ? "active" : ""}
