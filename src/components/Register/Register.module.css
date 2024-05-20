@@ -1,6 +1,7 @@
 .register {
     width: 400px;
-    margin-left: 430px;
+    margin-left: 470px;
+    position: relative;
     margin-top: 30px;
     background-image: radial-gradient(circle at 10% 20%, rgb(28, 142, 210) 0%, rgb(113, 192, 244) 47.3%, rgb(139, 238, 230) 88.4%);
     border: 1px solid #dddfe2;

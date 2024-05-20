@@ -1,3 +1,4 @@
+// Register.js
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { googleProvider, facebookProvider, auth } from "../UserAuthentication/Config"; // Import Firebase auth and providers

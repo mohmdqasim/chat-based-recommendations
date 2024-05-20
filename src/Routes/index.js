@@ -13,7 +13,7 @@ import Bizz from "../pages/DashboardPages/Bizz/Bizz";
 import Bank from "../pages/DashboardPages/Bank/Bank";
 import Chat from "../pages/DashboardPages/Chat/Chat";
 import AmazonPfeature from "../components/forms/AmazonPfeature";
-import Cards from "../components/Cards";
+import Cards from "../components/Cards/Cards";
 import AmazonProduct from "../components/forms/AmazonProduct";
 import BlogPost from "../components/forms/BlogPost";
 import BlogPostIntro from "../components/forms/BlogPostIntro";

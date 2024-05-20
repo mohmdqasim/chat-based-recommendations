@@ -1,12 +1,11 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 
+
 const containerStyle = {
   display: 'flex',
-  // minHeight: '530px',
   flexWrap: 'wrap',
   justifyContent: 'center',
   gap: '50px',
@@ -16,13 +15,25 @@ const containerStyle = {
 
 const cardStyle = {
   maxWidth: 275,
+  minHeight: 170,
   maxHeight: 170,
   cursor: 'pointer',
   padding: '14px',
   border: '2px solid #ccc',
   borderRadius: 18,
   boxShadow: '0px 3px 10px rgba(0, 0, 0, 0.1)',
-  transition: 'background-color 0.7s, color 0.9s', // Add CSS transition for color change
+  transition: 'transform 0.3s, box-shadow 0.3s, border 0.3s, background-color 0.7s',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  overflow: 'hidden', // Ensure content doesn't overflow the card
+  textAlign: 'center', // Center align text for better appearance
+};
+
+const hoveredCardStyle = {
+  transform: 'scale(1.05)',
+  boxShadow: '0px 6px 20px rgba(0, 0, 0, 0.2)',
+  border: '2px solid rgba(77, 238, 253, 0.7)',
 };
 
 export default function Cards() {
@@ -45,7 +56,6 @@ export default function Cards() {
   const isHovered = (cardId) => cardId === hoveredCard;
 
   const cards = [
-    // Your card data array here
     { id: 'AmazonProduct', title: 'Amazon Product Description', description: 'Create compelling product descriptions for Amazon listings.' },
     { id: 'AmazonPfeature', title: 'Amazon Product Features (bullets)', description: 'Create key feature and benefit bullet points for Amazon listings under the "about this item" section.' },
     { id: 'BlogPost', title: 'Blog Post Conclusion Paragraph', description: 'Wrap up your blog posts with an engaging conclusion paragraph.' },
@@ -74,22 +84,20 @@ export default function Cards() {
               ? 'linear-gradient(112.1deg, rgb(77, 238, 253) 0.7%, rgb(3, 151, 232) 26.1%, rgb(47, 31, 116) 95.7%)'
               : 'none',
             color: isHovered(card.id) ? 'white' : 'black',
+            ...(isHovered(card.id) ? hoveredCardStyle : {}),
           }}
           onClick={() => handleCardClick(`/${card.id}`)}
           onMouseEnter={() => handleMouseEnter(card.id)}
           onMouseLeave={handleMouseLeave}
         >
-          
           <CardContent>
-          
-            <Typography style={{marginTop:'-15px'}} variant="h5" component="div">
+            <Typography variant="h5" component="div">
               {card.title}
             </Typography>
             <Typography variant="body2">
               {card.description}
             </Typography>
           </CardContent>
-          
         </div>
       ))}
     </div>

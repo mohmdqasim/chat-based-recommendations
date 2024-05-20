@@ -25,7 +25,7 @@ export const Sidebars = (props) => {
   useEffect(() => {
     // Update activeImage based on the current URL
     const path = location.pathname;
-    if (path === "/") {
+    if (path === "/Dashboard") {
       setActiveImage(dashboard);
     } else if (path.startsWith("/voice")) {
       setActiveImage(voice);
@@ -33,7 +33,7 @@ export const Sidebars = (props) => {
       setActiveImage(bizz);
     } else if (path.startsWith("/bank")) {
       setActiveImage(bank);
-    }
+    } 
   }, [location.pathname]);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export const Sidebars = (props) => {
             className={activeImage === CardsImage ? "active-link" : ""}
           >
             <img src={CardsImage} alt="icon" />
-            <p>Create</p>
+            <p>Cards</p>
           </MenuItem>
 
 
@@ -81,6 +81,7 @@ export const Sidebars = (props) => {
             <img src={voice} alt="icon" />
             <p>Voice</p>
           </MenuItem>
+
           <MenuItem
             onClick={() => handleImageClick(bizz)}
             component={<Link to="/bizz" />}
