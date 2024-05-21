@@ -50,6 +50,7 @@ export const Sidebars = (props) => {
       <Sidebar>
         <div className="logo">
         <Link to="/Dashboard"> <h5>CHARLI</h5></Link>
+
          
         </div>
         <Menu >
@@ -101,12 +102,16 @@ export const Sidebars = (props) => {
         
         </Menu>
       </Sidebar>
+
+      
       
       <TrainChatbotModal show={modalShow} handleClose={() => setModalShow(false)} 
 
         setModalShow ={setModalShow}
 
       />
+  
     </>
+    
   );
 };
