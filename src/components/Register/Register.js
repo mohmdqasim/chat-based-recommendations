@@ -74,7 +74,7 @@ const Register = () => {
         const data = await response.json();
         if (response.ok) {
           localStorage.setItem("email", user.email);
-          navigate("/dashboard");
+          navigate("/login");
         } else {
           alert(data.message);
         }

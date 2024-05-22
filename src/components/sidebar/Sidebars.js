@@ -8,6 +8,8 @@ import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 import { Link, useLocation } from "react-router-dom";
 import TrainChatbotModal from "../Modal/TrainChatbotModal";
 import CardsImage from "../../assets/images/edit.svg";
+// import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import logout from "../../assets/images/logout.svg"
 // import Cards from "../Cards";
 // import SignIn from '../../components/SignIn'
 // import SignIn from "../UserAuthentication/SignIn";
@@ -48,11 +50,14 @@ export const Sidebars = (props) => {
   return (
     <>
       <Sidebar>
-        <div className="logo">
-        <Link to="/Dashboard"> <h5>CHARLI</h5></Link>
-
-         
+      <div className="logo">
+      <Link to="/Dashboard" className="logo-link">
+        <div className="logo-image-container">
+          <img src={''} alt="User" />
         </div>
+      </Link>
+    </div>
+
         <Menu >
           <button className="chatbot" onClick={() => setModalShow(true)}>Start Campaign <img src="/images/add.svg" alt="add" /></button>
           <MenuItem
@@ -91,6 +96,7 @@ export const Sidebars = (props) => {
             <img src={bizz} alt="icon" />
             <p>Biz Info</p>
           </MenuItem>
+          
           <MenuItem
             onClick={() => handleImageClick(bank)}
             component={<Link to="/bank" />}
@@ -98,6 +104,15 @@ export const Sidebars = (props) => {
           >
             <img src={bank} alt="icon" />
             <p>Contant bank</p>
+          </MenuItem>
+
+          <MenuItem
+            onClick={() => handleImageClick(bank)}
+            component={<Link to="/" />}
+            className={activeImage === bank ? "active-link" : ""}
+          >
+            <img src={logout} alt="icon" />
+            <p>Log Out</p>
           </MenuItem>
         
         </Menu>

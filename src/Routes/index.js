@@ -54,7 +54,7 @@ export default function index() {
           errorElement={<ErrorPage />}
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <NavBar />
+              {/* <NavBar /> */}
 
               <PanelLayout />
             </PrivateRoute>

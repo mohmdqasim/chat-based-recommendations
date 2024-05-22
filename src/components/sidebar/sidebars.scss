@@ -3,6 +3,33 @@
 
 // ---------------
 
+// Logo.scss
+
+.logo {
+  display: inline-block; // Ensures the logo behaves like an inline element
+}
+
+.logo-link {
+  display: block; // Make the link a block-level element for easier styling
+  text-decoration: none; // Remove default underline from the link
+}
+
+.logo-image-container {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid black;
+
+  // Adjustments for the image
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Maintain aspect ratio and cover the container
+  }
+}
+
 .panel-sidebar {
   z-index: 99;
   width: 240px;

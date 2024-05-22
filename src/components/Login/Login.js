@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import basestyle from "../Base.module.css";
 import loginstyle from "./Login.module.css";
 import { useNavigate, NavLink } from "react-router-dom";
 
-const Login = ({ setUserState }) => {
+const Login = () => {
   const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
   const [user, setUserDetails] = useState({
     email: "",
     password: "",
@@ -38,9 +37,8 @@ const Login = ({ setUserState }) => {
     e.preventDefault();
     const errors = validateForm(user);
     setFormErrors(errors);
-
+  
     if (Object.keys(errors).length === 0) {
-      setIsSubmit(true);
       try {
         const response = await fetch('http://127.0.0.1:5000/login', {
           method: 'POST',
@@ -49,28 +47,25 @@ const Login = ({ setUserState }) => {
           },
           body: JSON.stringify(user),
         });
+  
         const data = await response.json();
-
+  
         if (response.ok) {
           // Assuming the server sends back user details and a token
           localStorage.setItem("token", data.token);
           localStorage.setItem("email", user.email);
-          setUserState(data.user); // Assuming setUserState is used to set user context/state
-          navigate("/dashboard");
+          navigate("/Dashboard"); // Redirect to Dashboard
         } else {
+          console.error('Login failed:', data.message);
           alert(data.message);
         }
       } catch (error) {
-        console.error(error.message);
+        console.error('Error during login:', error.message);
       }
+    } else {
+      console.log('Validation errors:', errors);
     }
   };
-
-  useEffect(() => {
-    if (isSubmit && Object.keys(formErrors).length === 0) {
-      // Logic after successful submission
-    }
-  }, [formErrors, isSubmit]);
 
   return (
     <div className={basestyle["auth-container"]}>

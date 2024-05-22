@@ -4,14 +4,25 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Link } from 'react-router-dom';
 
+const fetchUserProfileImage = () => {
+  return 'url_to_user_profile_image';
+};
+
 export default function DenseAppBar() {
+  const userProfileImage = fetchUserProfileImage();
+
   return (
-    <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-      <AppBar position="static" sx={{ backgroundColor: '#60381a', width: '10%', marginLeft:'1280px' }}>
-        <Toolbar variant="dense" sx={{ justifyContent: 'center' }}>
-          <Link to="/" style={{ color: 'white', textDecoration: 'none', flexGrow: 1 }}>Home</Link>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <Toolbar variant="dense" sx={{ justifyContent: 'center', marginLeft: '1290px', padding: 0, pointerEvents: 'none' }}>
+      <Link to="/" style={{ flexGrow: 1, pointerEvents: 'auto' }}>
+        <div style={{ display: 'inline-block', margin: 0,}}>
+          <img
+            src={userProfileImage}
+            alt="User Profile"
+            style={{ width: '25px', height: '25px', borderRadius: '50%', border: '1px solid black', display: 'block', margin: 0, }}
+          />
+          apple
+        </div>
+      </Link>
+    </Toolbar>
   );
 }
