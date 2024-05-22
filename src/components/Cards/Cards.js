@@ -89,7 +89,7 @@ export default function Cards() {
     padding-left: 40px; // Corrected from paddingLeft:'40px' to padding-left: 40px
   }
   .card {
-    width: calc(70% - 25px); // Adjust padding and gap
+    width: calc(90% - 25px); // Adjust padding and gap
     height: 70px;
     padding-left: 60px; // Corrected from paddingLeft to padding-left
     margin-left: 40px
