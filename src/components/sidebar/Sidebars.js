@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 import "./sidebars.scss";
 import dashboard from "../../assets/images/dashboard.svg";
 import voice from "../../assets/images/voice.svg";
 import bizz from "../../assets/images/bizz.svg";
 import bank from "../../assets/images/bank.svg";
-import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
-import { Link, useLocation } from "react-router-dom";
-import TrainChatbotModal from "../Modal/TrainChatbotModal";
 import CardsImage from "../../assets/images/edit.svg";
-// import Cards from "../Cards";
-// import SignIn from '../../components/SignIn'
-// import SignIn from "../UserAuthentication/SignIn";
-
-
+import logout from "../../assets/images/logout.svg";
+import TrainChatbotModal from "../Modal/TrainChatbotModal";
 
 
 export const Sidebars = (props) => {
@@ -33,7 +29,7 @@ export const Sidebars = (props) => {
       setActiveImage(bizz);
     } else if (path.startsWith("/bank")) {
       setActiveImage(bank);
-    } 
+    }
   }, [location.pathname]);
 
   useEffect(() => {
@@ -44,16 +40,24 @@ export const Sidebars = (props) => {
   const handleImageClick = (image) => {
     setActiveImage(image);
   };
+
   const [modalShow, setModalShow] = useState(false);
+
   return (
     <>
       <Sidebar>
         <div className="logo">
-        <Link to="/Dashboard"> <h5>CHARLI</h5></Link>
-         
+          <Link to="/Profile" className="logo-link">
+            <div className="logo-image-container">
+              <img src={'../../assets/images/robot1.jpg'} alt="User" />
+            </div>
+          </Link>
         </div>
-        <Menu >
-          <button className="chatbot" onClick={() => setModalShow(true)}>Start Campaign <img src="/images/add.svg" alt="add" /></button>
+
+        <Menu>
+          <button className="chatbot" onClick={() => setModalShow(true)}>
+            Start Campaign <img src="/images/add.svg" alt="add" />
+          </button>
           <MenuItem
             onClick={() => handleImageClick(dashboard)}
             component={<Link to="/Dashboard" />}
@@ -72,7 +76,6 @@ export const Sidebars = (props) => {
             <p>Cards</p>
           </MenuItem>
 
-
           <MenuItem
             onClick={() => handleImageClick(voice)}
             component={<Link to="/voice" />}
@@ -90,23 +93,28 @@ export const Sidebars = (props) => {
             <img src={bizz} alt="icon" />
             <p>Biz Info</p>
           </MenuItem>
+
           <MenuItem
             onClick={() => handleImageClick(bank)}
             component={<Link to="/bank" />}
             className={activeImage === bank ? "active-link" : ""}
           >
             <img src={bank} alt="icon" />
-            <p>Contant bank</p>
+            <p>Contact bank</p>
           </MenuItem>
-        
+
+          <MenuItem
+            onClick={() => handleImageClick(bank)}
+            component={<Link to="/Looogin" />}
+            className={activeImage === bank ? "active-link" : ""}
+          >
+            <img src={logout} alt="icon" />
+            <p>Log Out</p>
+          </MenuItem>
         </Menu>
       </Sidebar>
-      
-      <TrainChatbotModal show={modalShow} handleClose={() => setModalShow(false)} 
 
-        setModalShow ={setModalShow}
-
-      />
+      <TrainChatbotModal show={modalShow} handleClose={() => setModalShow(false)} setModalShow={setModalShow} />
     </>
   );
 };

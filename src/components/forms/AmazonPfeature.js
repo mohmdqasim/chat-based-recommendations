@@ -16,7 +16,7 @@ function AmazonPfeature() {
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }}>
           <div style={{ marginBottom: '15px' }}>
-            <h2>Amazon Product Features</h2>
+            <h4>Amazon Product Features</h4>
             <p>Create compelling product descriptions for Amazon listings.</p>
           </div>
 

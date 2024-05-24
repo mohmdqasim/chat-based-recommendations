@@ -3,22 +3,27 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 
-
 const containerStyle = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
-  gap: '50px',
-  rowGap: '40px',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(265px, 1fr))', // adjust the minmax values according to your card size
+  gap: '25px',
   marginTop: '10px',
+  justifyContent: 'center', // align horizontally in center
+  alignItems: 'center', // align vertically in center
+  paddingLeft:'60px'
+
+
 };
 
+
+
 const cardStyle = {
-  maxWidth: 275,
-  minHeight: 170,
-  maxHeight: 170,
+  maxWidth: 265,
+  minHeight: 136,
+  maxHeight: 136,
+
   cursor: 'pointer',
-  padding: '14px',
+  padding: '20px',
   border: '2px solid #ccc',
   borderRadius: 18,
   boxShadow: '0px 3px 10px rgba(0, 0, 0, 0.1)',
@@ -26,8 +31,8 @@ const cardStyle = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  overflow: 'hidden', // Ensure content doesn't overflow the card
-  textAlign: 'center', // Center align text for better appearance
+  overflow: 'hidden',
+  textAlign: 'center',
 };
 
 const hoveredCardStyle = {
@@ -74,32 +79,67 @@ export default function Cards() {
   ];
 
   return (
-    <div style={containerStyle}>
-      {cards.map((card) => (
-        <div
-          key={card.id}
-          style={{
-            ...cardStyle,
-            backgroundImage: isHovered(card.id)
-              ? 'linear-gradient(112.1deg, rgb(77, 238, 253) 0.7%, rgb(3, 151, 232) 26.1%, rgb(47, 31, 116) 95.7%)'
-              : 'none',
-            color: isHovered(card.id) ? 'white' : 'black',
-            ...(isHovered(card.id) ? hoveredCardStyle : {}),
-          }}
-          onClick={() => handleCardClick(`/${card.id}`)}
-          onMouseEnter={() => handleMouseEnter(card.id)}
-          onMouseLeave={handleMouseLeave}
-        >
-          <CardContent>
-            <Typography variant="h5" component="div">
-              {card.title}
-            </Typography>
-            <Typography variant="body2">
-              {card.description}
-            </Typography>
-          </CardContent>
-        </div>
-      ))}
+    <div>
+      <style>
+  {`
+  @media (max-width: 600px) {
+  .container {
+    display: flex;
+    gap: 10px;
+    padding-left: 40px; // Corrected from paddingLeft:'40px' to padding-left: 40px
+  }
+  .card {
+    width: calc(90% - 25px); // Adjust padding and gap
+    height: 70px;
+    padding-left: 60px; // Corrected from paddingLeft to padding-left
+    margin-left: 40px
+  }
+  .hide-on-mobile {
+    display: none;
+  }
+  .card .MuiTypography-h5 {
+    font-size: 0.9rem;
+  }
+  .card-content {
+    padding: 1px;
+  }
+  .card-content .MuiTypography-h5 {
+    font-size: 0.9rem;
+  }
+}
+  `}
+</style>
+
+
+      <div style={containerStyle} className="container">
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            className="card"
+            style={{
+              ...cardStyle,
+              backgroundImage: isHovered(card.id)
+                ? 'linear-gradient(112.1deg, rgb(77, 238, 253) 0.7%, rgb(3, 151, 232) 26.1%, rgb(47, 31, 116) 95.7%)'
+                : 'none',
+              color: isHovered(card.id) ? 'white' : 'black',
+              ...(isHovered(card.id) ? hoveredCardStyle : {}),
+            }}
+            onClick={() => handleCardClick(`/${card.id}`)}
+            onMouseEnter={() => handleMouseEnter(card.id)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <CardContent className="card-content">
+              <Typography variant="h5" component="div" style={{fontSize:'22px'}}>
+                {card.title}
+              </Typography>
+              <Typography variant="body2" className="hide-on-mobile" style={{fontSize:'12px'}}>
+                {card.description}
+              </Typography>
+            </CardContent>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
+
