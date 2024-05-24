@@ -12,7 +12,10 @@
   padding: 0;
 }
 .error-message {
-  display: none;
+  /* display: none; */
+  color: red; /* Change color to red */
+  margin: auto;
+  margin-left: 30px;
 }
 
 /* Add this CSS to display error messages only when the input field is focused and there's an error */
@@ -117,18 +120,33 @@ h2 {
 } */
 
 .container_signup {
-  /* position: absolute; */
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  width: 900px;
-  height: 700px;
+  flex-direction: column; /* Ensure it stacks children vertically */
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 900px;
   background: #fff;
   box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.1); /* Increased shadow opacity for more visibility */
   border-radius: 20px;
-  margin: 100px auto; /* Centers the container horizontally and adds top margin */
+  margin: 100px auto; 
   padding: 40px; /* Added padding for inner spacing */
   border: 2px solid #ddd; /* Added border for more visibility */
+  overflow: hidden; /* Added this line to make the container scrollable */
+}
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #222;
+  background: #f8f8f8;
+  font-weight: 400;
+  font-family: 'Poppins';
+  overflow: hidden; 
 }
 
 .display-flex {
@@ -146,9 +164,7 @@ h2 {
   transform: translate(-50%, -50%);
 }
 
-.signup {
-  margin-bottom: 150px;
-}
+
 
 .signup-content {
   padding: 75px 0;
@@ -189,6 +205,7 @@ figure {
 
 .form-submit:hover {
   background: #4292dc;
+  align-self: center;
 }
 
 #signin {
@@ -236,6 +253,7 @@ figure {
   width: calc(100% - 40px); /* Adjust width to accommodate the icon */
   padding: 10px 10px 10px 40px; /* Add padding to the left for the icon */
   margin-top: 8px;
+  
 }
 
 /* Add styles for the icon to align it properly */
@@ -327,4 +345,40 @@ label {
   font-size: 13px;
   font-weight: normal;
   color: #999;
+}
+
+@media screen and (max-width: 768px) {
+  .signup-content {
+    flex-direction: column; /* Change flex direction to column */
+    align-items: center; /* Center items horizontally */
+    margin-right:60px;
+  }
+
+  .signup-form, .signup-image {
+    width: 100%; /* Make both elements full width */
+    margin: 0; /* Remove margin */
+    /* margin-top: -50px; */
+  }
+
+  
+
+  .signup-image {
+    order: 1; /* Change order to appear below form */
+    margin-top: 5px; /* Add margin for spacing */
+  }
+  .container_signup {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    max-height: 100%; /* Use max-height to prevent overflow */
+    background: #fff;
+    box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 100px auto;
+    padding: 40px;
+    border: 2px solid #ddd;
+    overflow: hidden; /* Allow scrolling */
+  }
 }

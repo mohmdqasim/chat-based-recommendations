@@ -81,11 +81,23 @@ h2 {
 }
 
 .sign-in {
-  margin-bottom: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* width: 100vh; */
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #222;
+  background: #f8f8f8;
+  font-weight: 400;
+  font-family: 'Poppins';
 }
 
 .signin-content {
-  padding: 75px 0;
+  padding: 40px 0;
+
 }
 
 .signin-form, .signin-image {
@@ -96,6 +108,7 @@ h2 {
 .signin-image {
   margin: 0 55px;
 }
+
 
 .form-title {
   margin-bottom: 33px;
@@ -141,6 +154,7 @@ input::placeholder {
   color: #999;
 }
 
+
 input:focus {
   border-bottom: 1px solid #222;
 }
@@ -149,17 +163,66 @@ input:focus::placeholder {
   color: #222;
 }
 
+
 .form-submit {
   display: inline-block;
+    text-align: center;
   background: #6dabe4;
-  color: #fff;
+  color:white;
   border-bottom: none;
+  /* margin-right: 100px; */
   padding: 15px 39px;
-  border-radius: 5px;
+  border-radius: 5px; 
   margin-top: 25px;
   cursor: pointer;
 }
 
 .form-submit:hover {
   background: #4292dc;
+}
+
+@media screen and (max-width: 768px) {
+  .signin-content {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px; /* Adjusted padding for better spacing */
+  }
+
+  .signin-form, .signin-image {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px; /* Added padding for inner spacing */
+  }
+
+  .signin-image {
+    order: 1;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .container-signIn {
+    display: flex;
+    flex-direction: column; /* Adjust flex direction to column */
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 400px; /* Set a max-width for better appearance */
+    height: auto;
+    background: #fff;
+    box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 20px auto; /* Adjusted margin for better spacing */
+    padding: 20px; /* Adjusted padding for inner spacing */
+    border: 2px solid #ddd;
+  }
+
+  .form-group {
+    margin-bottom: 20px; /* Reduced margin for better spacing */
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+  }
 }

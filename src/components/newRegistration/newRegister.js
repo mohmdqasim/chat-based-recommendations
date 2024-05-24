@@ -3,6 +3,7 @@ import './css/style.css';
 import signUp from './images/signup-image.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 
+
 const SignUpForm = () => {
     const navigate = useNavigate();
     const [formErrors, setFormErrors] = useState({});
@@ -27,7 +28,7 @@ const SignUpForm = () => {
         const errors = {};
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
-        if (!values.fname) {
+        if (!values.fname ) {
             errors.fname = "First Name is required";
         }
         if (!values.lname) {
@@ -91,7 +92,7 @@ const SignUpForm = () => {
                         <form method="POST" className="register-form" id="register-form" onSubmit={signupHandler}>
                             <div className="form-group">
                                 <label htmlFor="fname"><i className="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="fname" id="fname" placeholder={formErrors.fname || "First Name"} onChange={changeHandler} value={user.fname} className={formErrors.fname ? "error-input" : ""} />
+                                <input type="text" name="fname" id="fname" placeholder="First Name" onChange={changeHandler} value={user.fname} className={formErrors.fname ? "error-input" : ""} />
                                 {formErrors.fname && <span className="error-message">{formErrors.fname}</span>}
                             </div>
 
@@ -103,36 +104,36 @@ const SignUpForm = () => {
 
                             <div className="form-group">
                                 <label htmlFor="lname"><i className="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="lname" id="lname" placeholder={formErrors.lname || "Last Name"} onChange={changeHandler} value={user.lname} className={formErrors.lname ? "error-input" : ""} />
+                                <input type="text" name="lname" id="lname" placeholder="Last Name" onChange={changeHandler} value={user.lname} className={formErrors.lname ? "error-input" : ""} />
                                 {formErrors.lname && <span className="error-message">{formErrors.lname}</span>}
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="email"><i className="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder={formErrors.email || "Your Email"} onChange={changeHandler} value={user.email} className={formErrors.email ? "error-input" : ""} />
+                                <input type="email" name="email" id="email" placeholder="Your Email" onChange={changeHandler} value={user.email} className={formErrors.email ? "error-input" : ""} />
                                 {formErrors.email && <span className="error-message">{formErrors.email}</span>}
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="pass"><i className="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="password" placeholder={formErrors.password || "Password"} onChange={changeHandler} value={user.password} className={formErrors.password ? "error-input" : ""} />
+                                <input type="password" name="password" id="password" placeholder="Password" onChange={changeHandler} value={user.password} className={formErrors.password ? "error-input" : ""} />
                                 {formErrors.password && <span className="error-message">{formErrors.password}</span>}
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="re_pass"><i className="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="cpassword" id="cpassword" placeholder={formErrors.cpassword || "Repeat your password"} onChange={changeHandler} value={user.cpassword} className={formErrors.cpassword ? "error-input" : ""} />
+                                <input type="password" name="cpassword" id="cpassword" placeholder="Repeat your password" onChange={changeHandler} value={user.cpassword} className={formErrors.cpassword ? "error-input" : ""} />
                                 {formErrors.cpassword && <span className="error-message">{formErrors.cpassword}</span>}
                             </div>
 
-                            <div className="form-group form-button">
+                            <div className="submit-btn" style={{paddingRight:'32px'}}>
                                 <input type="submit" name="signup" id="signup" className="form-submit" value="Register" />
                             </div>
                         </form>
                     </div>
                     <div className="signup-image">
                         <figure><img src={signUp} alt="sign up" /></figure>
-                        <Link to="/Looogin" style={{ color: 'black' }}>I am already a member</Link>
+                        <Link to="/Looogin" style={{ color: 'black', textDecoration: 'underline' }}>I am already a member</Link>
                     </div>
                 </div>
             </div>
