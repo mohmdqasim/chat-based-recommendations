@@ -119,34 +119,33 @@ h2 {
   font-family: 'Poppins';
 } */
 
+/* Ensure the parent container uses Flexbox to center the signup container */
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height to center vertically */
+  background: #f8f8f8;
+  padding: 20px; /* Add some padding to ensure space for smaller screens */
+  overflow: auto; /* Enable scrolling for the parent container if needed */
+}
+
+/* Style the signup container */
 .container_signup {
   display: flex;
   flex-direction: column; /* Ensure it stacks children vertically */
   justify-content: center;
   align-items: center;
-  width: 800px;
-  height: 900px;
+  max-width: 800px; /* Maximum width to make it responsive */
+  width: 100%; /* Full width to make it responsive */
+  height: auto; /* Automatic height to adjust based on content */
   background: #fff;
   box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.1); /* Increased shadow opacity for more visibility */
   border-radius: 20px;
-  margin: 100px auto; 
+  margin: 20px; /* Add margin to ensure space around the container */
   padding: 40px; /* Added padding for inner spacing */
   border: 2px solid #ddd; /* Added border for more visibility */
-  overflow: hidden; /* Added this line to make the container scrollable */
-}
-.signup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.8;
-  color: #222;
-  background: #f8f8f8;
-  font-weight: 400;
-  font-family: 'Poppins';
-  overflow: hidden; 
+  overflow: auto; /* Enable scrolling inside the container */
 }
 
 
