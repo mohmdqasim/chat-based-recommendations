@@ -1,0 +1,81 @@
+/* Base.module.css */
+.button_common {
+    background-color: olivedrab;
+    color: white;
+    padding: 5px 30px;
+    border: none;
+    font-size: 22px;
+    border-radius: 15px;
+    margin: 0.5rem;
+    width: 90%;
+}
+
+.button_continue_google {
+    background-color: #04326d; /* White background for Google button */
+    color: white; /* Google blue text color */
+    padding: 10px 30px; /* Increased padding for better spacing */
+     border: none;
+    font-size: 16px;
+    border-radius: 8px; /* Slightly rounded corners */
+    margin: 1rem;
+    width: calc(100% - 2rem); /* Full width with margin considered */
+    display: flex;
+    margin-bottom: -4px;
+    margin-top: -3px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+}
+
+.button_continue_google:hover {
+    background-color: #3e7bde; /* Google blue background for hover effect */
+    color: white; /* White text color for hover effect */
+}
+
+.button_continue_google svg {
+    font-size: 22px; /* Adjust the size of the Google icon */
+    color: white; /* Google blue icon color */
+}
+
+.button_continue_facebook {
+    background-color: blue; /* Facebook blue color */
+    color: white;
+    padding: 11px 30px; /* Increased padding for better spacing */
+    border: none;
+    font-size: 16px;
+    border-radius: 8px; /* Slightly rounded corners */
+    margin: 1rem;
+    width: calc(100% - 2rem); /* Full width with margin considered */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.button_continue_facebook:hover {
+    background-color: #155cb0; /* Darker shade for hover effect */
+}
+
+.button_continue_facebook svg {
+    font-size: 25px; /* Adjust the size of the Facebook icon */
+}
+
+.error {
+    color: red;
+    text-align: left;
+    margin: auto;
+    font-size: 16px;
+    padding: 0px 1rem;
+}
+
+.auth-container {
+    background-image: url('../assets/images/authentication-background.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

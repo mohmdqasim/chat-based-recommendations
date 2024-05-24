@@ -1,0 +1,385 @@
+/* style.css */
+@extend display-flex;
+.display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
+  display: flex;
+  align-items: center;
+}
+
+/* @extend list-type-ulli; */
+.list-type-ulli, .socials {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.error-message {
+  /* display: none; */
+  color: red; /* Change color to red */
+  margin: auto;
+  margin-left: 30px;
+}
+
+/* Add this CSS to display error messages only when the input field is focused and there's an error */
+.error-input:focus + .error-message {
+  display: block;
+}
+
+/* poppins-300 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/poppins/poppins-v5-latin-300.eot");
+  src: local("Poppins Light"), local("Poppins-Light"), url("../fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300.svg#Poppins") format("svg");
+}
+
+/* poppins-300italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 300;
+  src: url("../fonts/poppins/poppins-v5-latin-300italic.eot");
+  src: local("Poppins Light Italic"), local("Poppins-LightItalic"), url("../fonts/poppins/poppins-v5-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300italic.svg#Poppins") format("svg");
+}
+
+/* Additional font-face definitions for other weights and styles omitted for brevity */
+
+a:focus, a:active {
+  text-decoration: none;
+  outline: none;
+  transition: all 300ms ease 0s;
+}
+
+input, select, textarea {
+  outline: none;
+  appearance: unset !important;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  appearance: none !important;
+  margin: 0;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+input[type=checkbox] {
+  appearance: checkbox !important;
+}
+
+input[type=radio] {
+  appearance: radio !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+p {
+  margin-bottom: 0;
+  font-size: 15px;
+  color: #777;
+}
+
+h2 {
+  line-height: 1.66;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #222;
+  font-family: 'Poppins';
+  font-size: 36px;
+}
+
+.main {
+  background: #f8f8f8;
+  padding: 150px 0;
+}
+
+.clear {
+  clear: both;
+}
+
+
+/* body {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  font-size: 13px;
+  line-height: 1.8;
+  color: #222;
+  background: #f8f8f8;
+  font-weight: 400;
+  font-family: 'Poppins';
+} */
+
+/* Ensure the parent container uses Flexbox to center the signup container */
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height to center vertically */
+  background: #f8f8f8;
+  padding: 20px; /* Add some padding to ensure space for smaller screens */
+  overflow: auto; /* Enable scrolling for the parent container if needed */
+}
+
+/* Style the signup container */
+.container_signup {
+  display: flex;
+  flex-direction: column; /* Ensure it stacks children vertically */
+  justify-content: center;
+  align-items: center;
+  max-width: 800px; /* Maximum width to make it responsive */
+  width: 100%; /* Full width to make it responsive */
+  height: auto; /* Automatic height to adjust based on content */
+  background: #fff;
+  box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.1); /* Increased shadow opacity for more visibility */
+  border-radius: 20px;
+  margin: 20px; /* Add margin to ensure space around the container */
+  padding: 40px; /* Added padding for inner spacing */
+  border: 2px solid #ddd; /* Added border for more visibility */
+  overflow: auto; /* Enable scrolling inside the container */
+}
+
+
+.display-flex {
+  justify-content: space-between;
+}
+
+.display-flex-center {
+  justify-content: center;
+}
+
+.position-center {
+  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.signup-content {
+  padding: 75px 0;
+}
+
+.signup-form, .signup-image, .signin-form, .signin-image {
+  width: 50%;
+  overflow: hidden;
+}
+
+.signup-image {
+  margin: 0 55px;
+}
+
+.form-title {
+  margin-bottom: 33px;
+}
+
+.signup-image {
+  margin-top: 45px;
+}
+
+figure {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.form-submit {
+  display: inline-block;
+  background: #6dabe4;
+  color: #fff;
+  border-bottom: none;
+  padding: 15px 39px;
+  border-radius: 5px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background: #4292dc;
+  align-self: center;
+}
+
+#signin {
+  margin-top: 16px;
+}
+
+.signup-image-link {
+  font-size: 14px;
+  color: #222;
+  display: block;
+  text-align: center;
+}
+
+.term-service {
+  font-size: 13px;
+  color: #222;
+}
+
+.signup-form {
+  margin: 0 75px;
+  padding-left: 34px;
+}
+
+.register-form {
+  width: 100%;
+}
+
+/* style.css */
+
+/* Ensure form fields have some margin and padding */
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  top: 30px;
+  /* left: 10px; */
+}
+
+.form-group input {
+  width: calc(100% - 40px); /* Adjust width to accommodate the icon */
+  padding: 10px 10px 10px 40px; /* Add padding to the left for the icon */
+  margin-top: 8px;
+  
+}
+
+/* Add styles for the icon to align it properly */
+.zmdi {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: none;
+  padding: 6px 30px;
+  font-family: 'Poppins';
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+input:focus {
+  border-bottom: 1px solid #222;
+}
+
+input:focus::placeholder {
+  color: #222;
+}
+
+input[type=checkbox]:not(old) {
+  width: 2em;
+  display: none;
+}
+
+input[type=checkbox]:not(old) + label {
+  display: inline-block;
+  line-height: 1.5em;
+  margin-top: 6px;
+}
+
+input[type=checkbox]:not(old) + label > span {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 15px;
+  margin-bottom: 3px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  background: white;
+  vertical-align: bottom;
+}
+
+input[type=checkbox]:not(old):checked + label > span:before {
+  content: '\f26b';
+  display: block;
+  color: #222;
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+  font-family: 'Material-Design-Iconic-Font';
+  font-weight: bold;
+}
+
+.agree-term {
+  display: none;
+}
+
+label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #222;
+}
+
+.label-agree-term {
+  position: relative;
+  top: 0;
+  transform: none;
+  font-size: 13px;
+  font-weight: normal;
+  color: #999;
+}
+
+@media screen and (max-width: 768px) {
+  .signup-content {
+    flex-direction: column; /* Change flex direction to column */
+    align-items: center; /* Center items horizontally */
+    margin-right:60px;
+  }
+
+  .signup-form, .signup-image {
+    width: 100%; /* Make both elements full width */
+    margin: 0; /* Remove margin */
+    /* margin-top: -50px; */
+  }
+
+  
+
+  .signup-image {
+    order: 1; /* Change order to appear below form */
+    margin-top: 5px; /* Add margin for spacing */
+  }
+  .container_signup {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 1000px;
+    max-height: 100%; /* Use max-height to prevent overflow */
+    background: #fff;
+    box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 100px auto;
+    padding: 40px;
+    border: 2px solid #ddd;
+    overflow: hidden; /* Allow scrolling */
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../../assets/scss/reset";
+
+
+.MuiFormLabel-root,.MuiInputBase-input{
+    font-family: "Inter", sans-serif !important;
+}
+.continue{
+    background-color: #4169E1;
+                outline: 0;
+                border: 0;
+                border-radius: 10px;
+                color: white;
+                padding: 7px 20px;
+                &:hover{
+                    background-color: #2e5ad7;
+                    
+                }
+}
