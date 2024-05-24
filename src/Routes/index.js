@@ -29,11 +29,11 @@ import FacebookAds from "../components/forms/FacebookAds";
 import JobDescription from "../components/forms/JobDescription";
 import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
 import SignIn from "../components/UserAuthentication/SignIn";
-import Register from "../components/Register/Register";
+// import Register from "../components/Register/Register";
 import Login from "../components/Login/Login";
 import Profile from '../components/Profile/Profile';
 import SignUpForm from "../components/newRegistration/newRegister";
-import latestLogin from '../components/newRegistration/newLogin'
+import Looogin from "../components/newRegistration/Looogin"
 
 // import newLogin from '../components/newRegistration/newLogin';
 
@@ -50,7 +50,6 @@ export default function index() {
   return (
     <Router>
       <Routes>
-        <Route path="/latestLogin" element={<latestLogin />} />
 
         <Route path="/" element={<SignUpForm />} />
 
@@ -58,6 +57,7 @@ export default function index() {
 
         {/* <Route path="/Login" element={<Login />} /> */}
 
+        <Route path="/Looogin" element={<Looogin />} />
 
         <Route
           path="/"

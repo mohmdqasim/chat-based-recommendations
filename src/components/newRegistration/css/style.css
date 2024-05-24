@@ -1,4 +1,5 @@
-/* @extend display-flex; */
+/* style.css */
+@extend display-flex;
 .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
   display: flex;
   align-items: center;
@@ -9,6 +10,14 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+.error-message {
+  display: none;
+}
+
+/* Add this CSS to display error messages only when the input field is focused and there's an error */
+.error-input:focus + .error-message {
+  display: block;
 }
 
 /* poppins-300 - latin */
@@ -94,21 +103,32 @@ h2 {
   clear: both;
 }
 
-body {
+
+/* body {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
   font-size: 13px;
   line-height: 1.8;
   color: #222;
   background: #f8f8f8;
   font-weight: 400;
   font-family: 'Poppins';
-}
+} */
 
-.container {
+.container_signup {
+  /* position: absolute; */
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
   width: 900px;
+  height: 700px;
   background: #fff;
-  margin: 0 auto;
-  box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.1); /* Increased shadow opacity for more visibility */
   border-radius: 20px;
+  margin: 100px auto; /* Centers the container horizontally and adds top margin */
+  padding: 40px; /* Added padding for inner spacing */
+  border: 2px solid #ddd; /* Added border for more visibility */
 }
 
 .display-flex {
@@ -120,7 +140,7 @@ body {
 }
 
 .position-center {
-  position: absolute;
+  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -196,11 +216,38 @@ figure {
   width: 100%;
 }
 
+/* style.css */
+
+/* Ensure form fields have some margin and padding */
 .form-group {
+  margin-bottom: 15px;
   position: relative;
-  margin-bottom: 25px;
-  overflow: hidden;
 }
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  top: 30px;
+  /* left: 10px; */
+}
+
+.form-group input {
+  width: calc(100% - 40px); /* Adjust width to accommodate the icon */
+  padding: 10px 10px 10px 40px; /* Add padding to the left for the icon */
+  margin-top: 8px;
+}
+
+/* Add styles for the icon to align it properly */
+.zmdi {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
 
 .form-group:last-child {
   margin-bottom: 0;
@@ -209,7 +256,7 @@ figure {
 input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid #999;
+  border-bottom: none;
   padding: 6px 30px;
   font-family: 'Poppins';
   box-sizing: border-box;

@@ -49,7 +49,7 @@ export const Sidebars = (props) => {
         <div className="logo">
           <Link to="/Profile" className="logo-link">
             <div className="logo-image-container">
-              <img src={''} alt="User" />
+              <img src={'../../assets/images/robot1.jpg'} alt="User" />
             </div>
           </Link>
         </div>
@@ -105,7 +105,7 @@ export const Sidebars = (props) => {
 
           <MenuItem
             onClick={() => handleImageClick(bank)}
-            component={<Link to="/login" />}
+            component={<Link to="/Looogin" />}
             className={activeImage === bank ? "active-link" : ""}
           >
             <img src={logout} alt="icon" />
