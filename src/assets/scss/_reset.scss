@@ -1,0 +1,327 @@
+@import "./mixin";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+:root {
+  --color-text: #{$white_color};
+  --theme-color: #{$dark_color};
+  --white-color: #{$white_color};
+  --black-color: #{$white_color};
+  --border: #{$white_color};
+  --font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--theme-color);
+  -webkit-text-size-adjust: $w_100;
+  -ms-text-size-adjust: none;
+  font: 16px/25px var(--font-family);
+  overflow-x: $hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: break-word;
+  font-family: "Inter", sans-serif !important;
+
+  @media (max-width: $breakpoint_laptop) {
+    font-size: 14px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;
+  font-family: var(--font-family);
+  font-weight: bold;
+  color: $dark_color;
+}
+
+/* Additional reset styles */
+.w-100 {
+  width: $w_100;
+}
+
+.max-width {
+  @include max_width;
+}
+
+.list-style-none {
+  @include list_style_none;
+}
+
+.text-break {
+  overflow-wrap: break-word;
+}
+
+.d-block {
+  display: $d_block;
+}
+
+.d-none {
+  display: $d_none;
+}
+
+.flex {
+  display: $flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.content-justify-center {
+  justify-content: center;
+}
+
+.content-justify-between {
+  justify-content: space-between;
+}
+
+.content-justify-start {
+  justify-content: flex-start;
+}
+
+.content-justify-end {
+  justify-content: flex-end;
+}
+
+.column-direction {
+  flex-direction: column;
+}
+
+.row-direction {
+  flex-direction: row;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto
+}
+
+.mt-auto {
+  margin-top: auto
+}
+
+.mb-auto {
+  margin-bottom: auto
+}
+
+.m-0 {
+  margin: 0
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+input[type="submit"], button {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: top;
+  border-style: $d_none;
+}
+
+button:focus, textarea:focus, input:focus, select {
+  outline: $d_none;
+}
+
+textarea, input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], input[type="date"], select {
+  color: #000;
+  font-family: var(--font-family);
+  font-family: "Inter", sans-serif !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: $transparent;
+  color: $transparent;
+  cursor: pointer;
+  height: auto;
+  @include position_abs_left;
+  right: 0;
+  bottom: 0;
+  width: auto;
+}
+
+*:focus {
+  outline: $d_none;
+}
+
+.transition {
+  @include transition;
+}
+
+#wrapper {
+  width: $w_100;
+  position: $position_rel;
+  overflow: $hidden;
+}
+
+.container {
+  width: $w_100;
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: $margin_auto;
+}
+
+.container.fluid {
+  max-width: $d_none;
+  padding: 0 40px;
+
+  @media (max-width: $breakpoint_tablet) {
+    padding: 0 15px;
+  }
+}
+
+.container:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.position_abs_right {
+  @include position_abs_right;
+}
+
+.position_abs_left {
+  @include position_abs_left;
+}
+
+.form-group {
+  &.filed-title {
+    label {
+      &:last-child {
+        width: 133px;
+      }
+    }
+  }
+
+  label {
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0 0 8px;
+    color: #07070C;
+    display: flex;
+    gap: 8px;
+    font-family: "Inter", sans-serif !important;
+
+    small {
+      font-size: 14px;
+      color: #B83C3C;
+    }
+  }
+}
+
+.form-control {
+  font-size: 14px;
+  outline: 0;
+  padding: 10px;
+  border-radius: 10px;
+  &::placeholder {
+    color: #8D8D8D !important;
+    outline: 0;
+  }
+
+  &:hover {
+    outline: 0;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  margin: 0 0 8px;
+
+  &:last-child {
+    margin-bottom: 0
+  }
+}
+
+table {
+  background-color: transparent;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+table {
+  width: 100%;
+}
+
+table>thead>tr>th, table>tbody>tr>th, table>tfoot>tr>th, table>thead>tr>td, table>tbody>tr>td, table>tfoot>tr>td {
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table thead tr th {
+  border-top: 1px solid #666666;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>th, .table>caption+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>td, .table>thead:first-child>tr:first-child>td {
+  border-top: 1px solid #666666;
+}
+
+table>thead>tr>th {
+  border-bottom: 2px solid #666666;
+  vertical-align: middle;
+}
+
+table>caption+thead>tr:first-child>th, table>colgroup+thead>tr:first-child>th, table>thead:first-child>tr:first-child>th, table>caption+thead>tr:first-child>td, table>colgroup+thead>tr:first-child>td, table>thead:first-child>tr:first-child>td {
+  border-bottom: 0 none;
+}
+
+table>tbody+tbody {
+  border-top: 2px solid #666666;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+  padding: 19px 10px;
+
+  @media (max-width: $breakpoint_laptop) {
+    padding: 11px 10px;
+  }
+}
+
+#root {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #DDDDDD;
+  border-radius: 10px;
+}

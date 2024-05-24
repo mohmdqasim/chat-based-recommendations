@@ -1,0 +1,144 @@
+@import "../../../../assets/scss/mixin.scss";
+
+
+#chart{
+   .card{
+    background: #fff;
+    padding: 30px 20px 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ECECEC;
+
+    @media screen and (max-width:$breakpoint_mobile_portrait) {
+padding: 30px 10px 0px;       }
+
+    .apexcharts-toolbar,
+    .apexcharts-xaxis,
+
+    .apexcharts-xaxis-tick {
+      display: none;
+    }
+
+    .apexcharts-active,
+    .apexcharts-xaxistooltip-text,
+    .apexcharts-tooltip-title {
+      background-color: #000000;
+      color: #fff;
+    }
+    .apexcharts-text tspan {
+        font-family: "Inter", sans-serif;
+        color: #98A2B8;
+        font-size: 14px;
+      }
+    .dropdowns{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .sale{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          h4{
+            font-size: 18px;
+            margin: 0;
+          }
+          p{
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            img{
+              margin-right: 15px;
+              &:last-child{
+                margin-left: 15px;
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+        .dropdown {
+            text-align: end;
+            margin-right: 5px;
+            .dropdown-toggle {
+                background: transparent;
+                color: #F7F8FA;
+                display: flex;
+                align-items: center;
+                border-radius: 7px;
+                border: none;
+                padding: 3px 10px;
+                .date {
+                  display: flex;
+                  align-items: center;
+                    p {
+                        color: #7B8289;
+                        font-size: 14px;
+                        margin-bottom: 0;
+                    }
+    
+                   img{
+                        margin-right: 10px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 100px;
+                        object-fit: cover;
+                        border: 1.5px solid #5E196C;
+                        padding: 3px;
+                   }
+                }
+    
+                &::after {
+                    border: 0;
+                    background: url(../../../../assets/images/down-angle-arrow.svg) no-repeat center;
+                    background-size: contain;
+                    width: 10px;
+                    height: 9px;
+                    margin-left: 12px;
+                }
+            }
+            .dropdown-menu{
+             
+              a{
+                font-size: 14px;
+                color: #7B8289;
+                &:hover{
+                
+                }
+              }
+            }
+        }
+    }
+    .months{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -25px;
+      gap: 30px;
+      p{
+        &:first-child{
+          &::before{
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #4169E1;
+            border-radius: 100px;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: -2px;
+          }
+        }
+        &:last-child{
+          &::before{
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #FFBE0A;
+            border-radius: 100px;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: -2px;
+          }
+        }
+      }
+    }
+   }
+}
