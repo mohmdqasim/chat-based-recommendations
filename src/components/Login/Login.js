@@ -1,7 +1,8 @@
+// src/components/Login.js
 import React, { useState } from "react";
+import { useNavigate, NavLink } from "react-router-dom";
 import basestyle from "../Base.module.css";
 import loginstyle from "./Login.module.css";
-import { useNavigate, NavLink } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -53,8 +54,8 @@ const Login = () => {
         if (response.ok) {
           // Assuming the server sends back user details and a token
           localStorage.setItem("token", data.token);
-          localStorage.setItem("email", user.email);
-          navigate("/Dashboard"); // Redirect to Dashboard
+          localStorage.setItem("user", JSON.stringify(data.user));
+          navigate("/Dashboard"); // Redirect to Profile page
         } else {
           console.error('Login failed:', data.message);
           alert(data.message);

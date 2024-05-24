@@ -31,7 +31,11 @@ import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
 import SignIn from "../components/UserAuthentication/SignIn";
 import Register from "../components/Register/Register";
 import Login from "../components/Login/Login";
-import NavBar from '../components/NavBar'
+import Profile from '../components/Profile/Profile';
+import SignUpForm from "../components/newRegistration/newRegister";
+import latestLogin from '../components/newRegistration/newLogin'
+
+// import newLogin from '../components/newRegistration/newLogin';
 
 const isAuthenticated = true;
 
@@ -46,8 +50,14 @@ export default function index() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/latestLogin" element={<latestLogin />} />
+
+        <Route path="/" element={<SignUpForm />} />
+
+        {/* <Route path="/" element={<Register />} /> */}
+
+        {/* <Route path="/Login" element={<Login />} /> */}
+
 
         <Route
           path="/"
@@ -88,6 +98,10 @@ export default function index() {
           <Route path="/JobDescription" element={<JobDescription />} />
           <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas />} />
           <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/Profile" element={<Profile />} />
+          {/* <Route path="/SignUpForm" element={<SignUpForm />} /> */}
+
+
         </Route>
       </Routes>
     </Router>

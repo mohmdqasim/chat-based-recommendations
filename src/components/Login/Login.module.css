@@ -16,7 +16,7 @@
 
 .login > form input {
 
-    /* border-radius: 20px; */
+    border-radius: 20px;
     border: 2px solid lightgrey;
     outline: none;
     color: #1d2129;
