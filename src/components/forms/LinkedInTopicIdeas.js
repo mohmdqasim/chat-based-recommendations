@@ -2,8 +2,11 @@ import React from 'react';
 import './Forms.css'; // Import CSS file for additional styling
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import axios from 'axios';
+=======
+>>>>>>> parent of e20f696 (Merge branch 'backend-integration')
 =======
 >>>>>>> parent of e20f696 (Merge branch 'backend-integration')
 =======
@@ -59,10 +62,14 @@ function LinkedInTopicIdeas() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 export default LinkedInTopicIdeas;
 
 
+=======
+export default LinkedInTopicIdeas;
+>>>>>>> parent of e20f696 (Merge branch 'backend-integration')
 =======
 export default LinkedInTopicIdeas;
 >>>>>>> parent of e20f696 (Merge branch 'backend-integration')

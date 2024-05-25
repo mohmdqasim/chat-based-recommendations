@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import React from 'react';
 // import './Forms.css'; // Import CSS file for additional styling
 
@@ -174,6 +175,10 @@ import './Forms.css'; // Import CSS file for additional styling
 import React from 'react';
 import './Forms.css'; // Import CSS file for additional styling
 >>>>>>> parent of e20f696 (Merge branch 'backend-integration')
+=======
+import React from 'react';
+import './Forms.css'; // Import CSS file for additional styling
+>>>>>>> parent of e20f696 (Merge branch 'backend-integration')
 
 function BusinessOrProductName() {
   return (
@@ -228,8 +233,11 @@ function BusinessOrProductName() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of e20f696 (Merge branch 'backend-integration')
 =======
 >>>>>>> parent of e20f696 (Merge branch 'backend-integration')
 =======
