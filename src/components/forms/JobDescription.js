@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import React from 'react';
 // import './Forms.css'; // Import CSS file for additional styling
 
@@ -334,6 +335,10 @@ import axios from 'axios';
 import React from 'react';
 import './Forms.css'; // Import CSS file for additional styling
 >>>>>>> parent of e20f696 (Merge branch 'backend-integration')
+=======
+import React from 'react';
+import './Forms.css'; // Import CSS file for additional styling
+>>>>>>> parent of e20f696 (Merge branch 'backend-integration')
 
 function JobDescription() {
   return (
@@ -450,9 +455,13 @@ function JobDescription() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 export default JobDescription;
+=======
+export default JobDescription;
+>>>>>>> parent of e20f696 (Merge branch 'backend-integration')
 =======
 export default JobDescription;
 >>>>>>> parent of e20f696 (Merge branch 'backend-integration')
