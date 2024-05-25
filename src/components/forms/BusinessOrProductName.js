@@ -211,6 +211,7 @@ function BusinessOrProductName() {
         </form>
       </div>
 
+<<<<<<< Updated upstream
       <div className="right-panel">
         {/* Response Window */}
         <div className="response-window">
@@ -219,6 +220,8 @@ function BusinessOrProductName() {
           No output generated yet.
         </div>
       </div>
+=======
+>>>>>>> Stashed changes
     </div>
   );
 }
