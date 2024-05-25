@@ -164,7 +164,6 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import ReactMarkdown from 'react-markdown';
 
 function BusinessOrProductName() {
   const [formData, setFormData] = useState({
@@ -281,13 +280,7 @@ function BusinessOrProductName() {
   );
 }
 
-function ComponentWithApiResponse({ data }) {
-  return (
-    <div>
-      <ReactMarkdown>{data}</ReactMarkdown>
-    </div>
-  );
-}
+
 
 export default BusinessOrProductName;
 

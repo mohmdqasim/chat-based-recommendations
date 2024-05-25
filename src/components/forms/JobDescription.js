@@ -329,7 +329,6 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import ReactMarkdown from 'react-markdown';
 
 function JobDescription() {
   const [formData, setFormData] = useState({
@@ -566,15 +565,6 @@ function JobDescription() {
   );
 }
 
-// Component that receives API response as prop
-function ComponentWithApiResponse({ data }) {
-  // Use the data in the component
-  return (
-    <div>
-      {/* Display the data */}
-      <ReactMarkdown>{data}</ReactMarkdown>
-    </div>
-  );
-}
+
 
 export default JobDescription;

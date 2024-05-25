@@ -180,7 +180,6 @@
 import './Forms.css'; // Import CSS file for additional styling
 import React, { useState } from 'react';
 import axios from 'axios';
-import ReactMarkdown from 'react-markdown';
 
 function LinkedInTopicIdeas() {
   const [formData, setFormData] = useState({
@@ -317,16 +316,6 @@ function LinkedInTopicIdeas() {
   );
 }
 
-// Component that receives API response as prop
-function ComponentWithApiResponse({ data }) {
-  // Use the data in the component
-  return (
-    <div>
-      {/* Display the data */}
-      <ReactMarkdown>{data}</ReactMarkdown>
-    </div>
-  );
-}
 
 export default LinkedInTopicIdeas;
 
