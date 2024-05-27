@@ -184,7 +184,7 @@ h2 {
 }
 
 .signup-image {
-  margin-top: 45px;
+  /* margin-top: 45px; */
 }
 
 figure {
@@ -192,18 +192,19 @@ figure {
   text-align: center;
 }
 
-.form-submit {
+.form-submit-register {
   display: inline-block;
-  background: #6dabe4;
+  background: rgb(22, 22, 223);
   color: #fff;
   border-bottom: none;
-  padding: 15px 39px;
+  padding: 13px 39px;
   border-radius: 5px;
   margin-top: 25px;
+  /* width: 500px; */
   cursor: pointer;
 }
 
-.form-submit:hover {
+.form-submit-register:hover {
   background: #4292dc;
   align-self: center;
 }
@@ -238,6 +239,7 @@ figure {
 /* Ensure form fields have some margin and padding */
 .form-group {
   margin-bottom: 15px;
+  width: 90px;
   position: relative;
 }
 
@@ -250,10 +252,9 @@ figure {
 }
 
 .form-group input {
-  width: calc(100% - 40px); /* Adjust width to accommodate the icon */
-  padding: 10px 10px 10px 40px; /* Add padding to the left for the icon */
-  margin-top: 8px;
-  
+  width: calc(100% - 20px); /* Adjusted width to make the input wider */
+  padding: 10px 10px 10px 40px; /* Keep the left padding for the icon */
+  margin-top: 6px;
 }
 
 /* Add styles for the icon to align it properly */
@@ -330,7 +331,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   display: none;
 }
 
-label {
+.zmdi zmdi-account material-icons-name {
   position: absolute;
   left: 0;
   top: 50%;
@@ -351,35 +352,98 @@ label {
   .signup-content {
     flex-direction: column; /* Change flex direction to column */
     align-items: center; /* Center items horizontally */
-    margin-right:60px;
+    align-content: center;
+    margin-right: 0; /* Center the content */
   }
 
   .signup-form, .signup-image {
     width: 100%; /* Make both elements full width */
     margin: 0; /* Remove margin */
-    /* margin-top: -50px; */
+    
   }
-
-  
 
   .signup-image {
     order: 1; /* Change order to appear below form */
-    margin-top: 5px; /* Add margin for spacing */
+    margin-top: 20px; /* Add margin for spacing */
   }
+
   .container_signup {
     display: flex;
     flex-direction: column; /* Stack children vertically */
     justify-content: center;
     align-items: center;
-    width: 800px;
-    height: 1000px;
-    max-height: 100%; /* Use max-height to prevent overflow */
+    width: 100%;
+    max-width: 400px; /* Limit the max width for better appearance */
     background: #fff;
     box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    margin: 100px auto;
-    padding: 40px;
+    margin: 20px auto;
+    /* padding: 20px; */
+    padding-left: 10px;
     border: 2px solid #ddd;
-    overflow: hidden; /* Allow scrolling */
+    overflow: hidden; /* Remove overflow hidden */
   }
+  .btn_continue_google{
+    /* padding-left: 10px; */
+    margin-left: -3px;
+  }
+  .btn_continue_facebook{
+    margin-left:-3px;
+
+  }
+  
 }
+
+.btn_continue_google {
+  background-color: #04326d; /* Dark blue background for Google button */
+  color: white; /* White text color */
+  padding: 10px 10px; /* Increased padding for better spacing */
+  border: none;
+  font-size: 13px;
+  width: 100%; /* Full width */
+  max-width: 300px; /* Optional: Limit the maximum width */
+  border-radius: 4px; /* Slightly rounded corners */
+  margin-bottom: 4px; /* Space below the button */
+  margin-top: -5px; /* Space above the button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between icon and text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+}
+
+
+.btn_continue_google:hover {
+  background-color: #3e7bde; /* Google blue background for hover effect */
+  color: white; /* White text color for hover effect */
+}
+
+.btn_continue_google svg {
+  font-size: 22px; /* Adjust the size of the Google icon */
+  color: white; /* Google blue icon color */
+}
+
+.btn_continue_facebook {
+  background-color: #0054b7; /* Facebook blue background */
+  color: white; /* White text color */
+  padding: 10px 10px; /* Increased padding for better spacing */
+  border: none;
+  font-size: 13px;
+  width: 100%; /* Full width */
+  max-width: 300px; /* Optional: Limit the maximum width */
+  border-radius: 4px; /* Slightly rounded corners */
+  margin-top: 5px; /* Space above the button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between icon and text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+}
+.btn_continue_facebook:hover {
+  background-color: #155cb0; /* Darker shade for hover effect */
+}
+
+.btn_continue_facebook svg {
+  font-size: 25px; /* Adjust the size of the Facebook icon */
+}
+
