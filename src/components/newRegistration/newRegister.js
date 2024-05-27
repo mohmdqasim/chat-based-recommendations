@@ -476,13 +476,14 @@ const SignUpForm = () => {
           </div>
           <div className="signup-image">
             <figure>
+            
               <img src={signUp} alt="sign up" />
             </figure>
             <div style={{ textAlign: "center" }}>
               <Link
                 to="/Looogin"
                 className="login-txt"
-                style={{ color: "black", textDecoration: "underline" }}
+                style={{ color: "green", textDecoration: "underline",fontWeight:'bold' }}
               >
                 I am already a member
               </Link>

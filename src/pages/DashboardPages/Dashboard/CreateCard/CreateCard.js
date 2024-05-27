@@ -44,7 +44,7 @@ function CreateCard() {
       <div className="card">
         <div className="row">
           <div className="col-xl-6 col-lg-10 col-md-10 mx-auto">
-            <h2>What do you want to create?</h2>
+            <h3 style={{textAlign:'center',marginTop:'10px'}}>What do you want to create?</h3>
             <div className="input-group">
               <input
                 type="text"

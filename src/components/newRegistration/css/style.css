@@ -177,6 +177,7 @@ h2 {
 
 .signup-image {
   margin: 0 55px;
+  
 }
 
 .form-title {
@@ -358,13 +359,15 @@ input[type=checkbox]:not(old):checked + label > span:before {
 
   .signup-form, .signup-image {
     width: 100%; /* Make both elements full width */
-    margin: 0; /* Remove margin */
+    margin  : 0; /* Remove margin */
+  
     
   }
 
   .signup-image {
     order: 1; /* Change order to appear below form */
     margin-top: 20px; /* Add margin for spacing */
+    margin-left: 30px;
   }
 
   .container_signup {
