@@ -9,6 +9,7 @@ import bank from "../../assets/images/bank.svg";
 import CardsImage from "../../assets/images/edit.svg";
 import logout from "../../assets/images/logout.svg";
 import TrainChatbotModal from "../Modal/TrainChatbotModal";
+import profileImage from '../../assets/images/robot1.jpg'
 
 
 export const Sidebars = (props) => {
@@ -46,13 +47,14 @@ export const Sidebars = (props) => {
   return (
     <>
       <Sidebar>
-        <div className="logo">
-          <Link to="/Profile" className="logo-link">
-            <div className="logo-image-container">
-              <img src={'../../assets/images/robot1.jpg'} alt="User" />
-            </div>
-          </Link>
-        </div>
+      <div className="logo">
+  <Link to="/Profile" className="logo-link">
+    <div className="logo-image-container">
+      <img src={profileImage} alt="User" />
+    </div>
+  </Link>
+</div>
+
 
         <Menu>
           <button className="chatbot" onClick={() => setModalShow(true)}>
@@ -105,7 +107,7 @@ export const Sidebars = (props) => {
 
           <MenuItem
             onClick={() => handleImageClick(bank)}
-            component={<Link to="/Looogin" />}
+            component={<Link to="/Login" />}
             className={activeImage === bank ? "active-link" : ""}
           >
             <img src={logout} alt="icon" />

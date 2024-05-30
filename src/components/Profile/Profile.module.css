@@ -1,71 +1,97 @@
 /* src/components/Profile.module.css */
 .profileContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  }
-  
-  .card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .userInfo {
-    text-align: left;
-  }
-  
-  .userInfo p {
-    margin: 10px 0;
-    font-size: 1.1em;
-    color: #555;
-  }
-  
-  .label {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .loading {
-    font-size: 1.5em;
-    color: #555;
-  }
-  
-  .formGroup {
-    margin-bottom: 15px;
-  }
-  
-  .input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .editButton, .saveButton {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  } 
-  
-  .editButton:hover, .saveButton:hover {
-    background-color: #45a049;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: orange;
+}
+
+
+
+.uploadBtn, .editBtn {
+  background: linear-gradient(to right, #1c8ed2, #8beee6);
+  padding: 5px 15px;
+  margin-right: 20px;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* transition: background 0.3s ease; */
+}
+
+
+
+.cancel-btn {
+  background: linear-gradient(to right, #1c8ed2, #8beee6);
+  padding: 5px 15px;
+  margin-right: 100px;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.saveBtn:hover, .cancelBtn:hover {
+  background: linear-gradient(to right, #157bbf, #7ed9e1);
+}
+
+
+
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid rgb(206, 162, 82); /* Added this line */
+}
+
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.userInfo {
+  text-align: left;
+}
+
+.userInfo p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.label {
+  font-weight: bold;
+  color: #333;
+}
+
+.loading {
+  font-size: 1.5em;
+  color: #555;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

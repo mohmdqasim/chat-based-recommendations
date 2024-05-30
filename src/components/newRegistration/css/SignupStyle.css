@@ -6,11 +6,7 @@
 }
 
 /* @extend list-type-ulli; */
-.list-type-ulli, .socials {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+
 .error-message {
   /* display: none; */
   color: red; /* Change color to red */
@@ -23,101 +19,6 @@
   display: block;
 }
 
-/* poppins-300 - latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 300;
-  src: url("../fonts/poppins/poppins-v5-latin-300.eot");
-  src: local("Poppins Light"), local("Poppins-Light"), url("../fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300.svg#Poppins") format("svg");
-}
-
-/* poppins-300italic - latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: italic;
-  font-weight: 300;
-  src: url("../fonts/poppins/poppins-v5-latin-300italic.eot");
-  src: local("Poppins Light Italic"), local("Poppins-LightItalic"), url("../fonts/poppins/poppins-v5-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300italic.svg#Poppins") format("svg");
-}
-
-/* Additional font-face definitions for other weights and styles omitted for brevity */
-
-a:focus, a:active {
-  text-decoration: none;
-  outline: none;
-  transition: all 300ms ease 0s;
-}
-
-input, select, textarea {
-  outline: none;
-  appearance: unset !important;
-}
-
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
-  appearance: none !important;
-  margin: 0;
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  box-shadow: none !important;
-}
-
-input[type=checkbox] {
-  appearance: checkbox !important;
-}
-
-input[type=radio] {
-  appearance: radio !important;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-figure {
-  margin: 0;
-}
-
-p {
-  margin-bottom: 0;
-  font-size: 15px;
-  color: #777;
-}
-
-h2 {
-  line-height: 1.66;
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  color: #222;
-  font-family: 'Poppins';
-  font-size: 36px;
-}
-
-.main {
-  background: #f8f8f8;
-  padding: 150px 0;
-}
-
-.clear {
-  clear: both;
-}
-
-
-/* body {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  font-size: 13px;
-  line-height: 1.8;
-  color: #222;
-  background: #f8f8f8;
-  font-weight: 400;
-  font-family: 'Poppins';
-} */
 
 /* Ensure the parent container uses Flexbox to center the signup container */
 .signup {
@@ -214,17 +115,6 @@ figure {
   margin-top: 16px;
 }
 
-.signup-image-link {
-  font-size: 14px;
-  color: #222;
-  display: block;
-  text-align: center;
-}
-
-.term-service {
-  font-size: 13px;
-  color: #222;
-}
 
 .signup-form {
   margin: 0 75px;
@@ -305,32 +195,7 @@ input[type=checkbox]:not(old) + label {
   margin-top: 6px;
 }
 
-input[type=checkbox]:not(old) + label > span {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  margin-right: 15px;
-  margin-bottom: 3px;
-  border: 1px solid #999;
-  border-radius: 2px;
-  background: white;
-  vertical-align: bottom;
-}
 
-input[type=checkbox]:not(old):checked + label > span:before {
-  content: '\f26b';
-  display: block;
-  color: #222;
-  font-size: 11px;
-  line-height: 1.2;
-  text-align: center;
-  font-family: 'Material-Design-Iconic-Font';
-  font-weight: bold;
-}
-
-.agree-term {
-  display: none;
-}
 
 .zmdi zmdi-account material-icons-name {
   position: absolute;
@@ -340,14 +205,6 @@ input[type=checkbox]:not(old):checked + label > span:before {
   color: #222;
 }
 
-.label-agree-term {
-  position: relative;
-  top: 0;
-  transform: none;
-  font-size: 13px;
-  font-weight: normal;
-  color: #999;
-}
 
 @media screen and (max-width: 768px) {
   .signup-content {

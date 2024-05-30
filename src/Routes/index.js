@@ -30,10 +30,10 @@ import JobDescription from "../components/forms/JobDescription";
 import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
 import SignIn from "../components/UserAuthentication/SignIn";
 // import Register from "../components/Register/Register";
-import Login from "../components/Login/Login";
+// import Login from "../components/Login/Login";
 import Profile from '../components/Profile/Profile';
-import SignUpForm from "../components/newRegistration/newRegister";
-import Looogin from "../components/newRegistration/Looogin"
+import SignUpForm from "../components/newRegistration/Signup";
+import Login from "../components/newRegistration/Signin"
 
 // import newLogin from '../components/newRegistration/newLogin';
 
@@ -57,7 +57,7 @@ export default function index() {
 
         {/* <Route path="/Login" element={<Login />} /> */}
 
-        <Route path="/Looogin" element={<Looogin />} />
+        <Route path="/Login" element={<Login />} />
 
         <Route
           path="/"

@@ -235,7 +235,7 @@
 
 
 import React, { useState } from "react";
-import "./css/style.css";
+import "./css/SignupStyle.css";
 import signUp from "./images/signup-image.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { googleProvider, facebookProvider, auth } from "../UserAuthentication/Config"; // Import Firebase auth and providers
@@ -481,7 +481,7 @@ const SignUpForm = () => {
             </figure>
             <div style={{ textAlign: "center" }}>
               <Link
-                to="/Looogin"
+                to="/Login"
                 className="login-txt"
                 style={{ color: "green", textDecoration: "underline",fontWeight:'bold' }}
               >
