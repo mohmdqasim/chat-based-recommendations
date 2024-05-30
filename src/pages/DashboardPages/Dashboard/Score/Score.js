@@ -44,7 +44,7 @@ function Score() {
                             </table>
                         </div>
                     </div>
-                    <div style={{marginLeft:'-13px'}} className="col-md-5">
+                    <div className="col-md-5">
                     <div className="Docscard">
                             <h4>Recent Docs</h4>
                             <table className="table table-borderless">

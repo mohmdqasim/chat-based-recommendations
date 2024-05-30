@@ -128,7 +128,7 @@ textarea:focus {
   border-color: #66afe9;
 }
 
-button {
+#submit-btn {
   background: linear-gradient(to right, #1c8ed2, #8beee6);
   padding: 10px 35px;
   text-align: center;
