@@ -115,7 +115,6 @@ const Profile = () => {
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-    console.log("X_STORED_USER_X",storedUser)
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       setUser(parsedUser);
@@ -262,12 +261,12 @@ const Profile = () => {
           <p>
             <span className={styles.label}>Email:</span> {user.email}
           </p>
-          {user.image && (
+          {/* {user.image && (
             <img
               src={`http://localhost:5000/uploads/${user.image}`}
               alt="Profile"
             />
-          )}
+          )} */}
         </div>
         <div>
           <label className={styles.label} htmlFor="image">

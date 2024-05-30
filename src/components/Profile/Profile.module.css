@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: orange;
+  background: linear-gradient(to right, #1c8ed2, #8beee6);
 }
 
 
@@ -54,7 +54,7 @@
   max-width: 500px;
   width: 100%;
   text-align: center;
-  border: 2px solid rgb(206, 162, 82); /* Added this line */
+  border: 2px solid rgb(111, 111, 238); /* Added this line */
 }
 
 
