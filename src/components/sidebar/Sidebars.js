@@ -9,8 +9,7 @@ import bank from "../../assets/images/bank.svg";
 import CardsImage from "../../assets/images/edit.svg";
 import logout from "../../assets/images/logout.svg";
 import TrainChatbotModal from "../Modal/TrainChatbotModal";
-import profileImage from '../../assets/images/robot1.jpg'
-
+import profileImage from "../../assets/images/robot1.jpg";
 
 export const Sidebars = (props) => {
   const location = useLocation();
@@ -47,14 +46,13 @@ export const Sidebars = (props) => {
   return (
     <>
       <Sidebar>
-      <div className="logo">
-  <Link to="/Profile" className="logo-link">
-    <div className="logo-image-container">
-      <img src={profileImage} alt="User" />
-    </div>
-  </Link>
-</div>
-
+        <div className="logo">
+          <Link to="/Profile" className="logo-link">
+            <div className="logo-image-container">
+              <img src={profileImage} alt="User" />
+            </div>
+          </Link>
+        </div>
 
         <Menu>
           <button className="chatbot" onClick={() => setModalShow(true)}>
@@ -116,7 +114,11 @@ export const Sidebars = (props) => {
         </Menu>
       </Sidebar>
 
-      <TrainChatbotModal show={modalShow} handleClose={() => setModalShow(false)} setModalShow={setModalShow} />
+      <TrainChatbotModal
+        show={modalShow}
+        handleClose={() => setModalShow(false)}
+        setModalShow={setModalShow}
+      />
     </>
   );
 };

@@ -193,6 +193,7 @@ const LoginForm = () => {
                 if (response.ok) {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
+                    console.log("X_LOCALSTORAGE DATA_x",localStorage.getItem('user'));
                     navigate("/Dashboard");
 
                     // Redirect or do something else after successful login
