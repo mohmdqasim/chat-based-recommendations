@@ -146,7 +146,7 @@ export const Sidebars = (props) => {
     return storedImage ? storedImage : dashboard;
   });
 
-  const [user, setUser] = useState({ fname: "",lname:'', image: "" });
+  const [user, setUser] = useState({ fname: "", lname: "", image: "" });
 
   useEffect(() => {
     // Fetch user data from localStorage or API if not already fetched
@@ -184,29 +184,32 @@ export const Sidebars = (props) => {
   return (
     <>
       <Sidebar>
-      <div className="logo">
-  <Link to="/Profile" className="logo-link">
-    <div className="logo-container">
-      <div className="logo-image-container">
-        {user.image ? (
-          <img src={`data:image/jpeg;base64,${user.image}`} alt="User" className="logo-image"/>
-        ) : (
-          <img src="../../assets/images/default-profile.jpg" alt="User" className="logo-image"/>
-        )}
-      </div>
-      <div className="user-name">
-        <p>{user.fname + ' ' + user.lname}</p>
-        {/* <p>{user.mname}</p> */}
-        {/* <p>{user.lname}</p> */}
-
-
-      </div>
-    </div>
-  </Link>
-</div>
-
-
-
+        <div className="logo">
+          <Link to="/Profile" className="logo-link">
+            <div className="logo-container">
+              <div className="logo-image-container">
+                {user.image ? (
+                  <img
+                    src={`data:image/jpeg;base64,${user.image}`}
+                    alt="User"
+                    className="logo-image"
+                  />
+                ) : (
+                  <img
+                    src="../../assets/images/default-profile.jpg"
+                    alt="User"
+                    className="logo-image"
+                  />
+                )}
+              </div>
+              <div className="user-name">
+                <p>{user.fname + " " + user.lname}</p>
+                {/* <p>{user.mname}</p> */}
+                {/* <p>{user.lname}</p> */}
+              </div>
+            </div>
+          </Link>
+        </div>
 
         <Menu>
           <button className="chatbot" onClick={() => setModalShow(true)}>
@@ -276,3 +279,4 @@ export const Sidebars = (props) => {
     </>
   );
 };
+
