@@ -146,7 +146,7 @@ export const Sidebars = (props) => {
     return storedImage ? storedImage : dashboard;
   });
 
-  const [user, setUser] = useState({ full_name: "", image: "" });
+  const [user, setUser] = useState({ fname: "",lname:'', image: "" });
 
   useEffect(() => {
     // Fetch user data from localStorage or API if not already fetched
@@ -195,7 +195,11 @@ export const Sidebars = (props) => {
         )}
       </div>
       <div className="user-name">
-        <p>{user.full_name}</p>
+        <p>{user.fname + ' ' + user.lname}</p>
+        {/* <p>{user.mname}</p> */}
+        {/* <p>{user.lname}</p> */}
+
+
       </div>
     </div>
   </Link>
