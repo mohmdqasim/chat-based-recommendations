@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import './Forms.css'; // Import CSS file for additional styling
 
@@ -248,6 +249,20 @@ function FacebookAds() {
     }
   };
 
+=======
+import React, { useState, useEffect } from 'react';
+import './Forms.css';
+import Autocomplete from '../../components/AutoComplete/AutoComplete'; // Import CSS file for additional styling
+
+function FacebookAds() {
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    // Load voices from localStorage on component mount
+    const savedVoices = JSON.parse(localStorage.getItem('voices')) || [];
+    setVoices(savedVoices);
+  }, []);
+>>>>>>> origin/frontend
   return (
     <div className="container">
       <div className="left-panel">
@@ -277,8 +292,10 @@ function FacebookAds() {
             ></textarea>
           </div>
 
+
           <div style={{ marginBottom: '15px' }}>
             <label htmlFor="tone-of-voice">Tone of Voice:</label>
+<<<<<<< HEAD
             <input
               id="toneOfVoice"
               type="text"
@@ -289,6 +306,19 @@ function FacebookAds() {
           </div>
           <button type="submit" disabled={loading}>
             {loading ? 'Generating...' : 'Generate'}
+=======
+            <Autocomplete
+              suggestions={voices}
+              onInputChange={(input) => {}} // Empty function since we are not using toneOfVoice
+              placeholder="Witty, Friendly"
+            />
+   			</div>
+
+          <button
+            type="submit" id='submit-btn'
+          >
+            Generate
+>>>>>>> origin/frontend
           </button>
         </form>
       </div>

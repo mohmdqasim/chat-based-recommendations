@@ -1,4 +1,5 @@
 // import React from 'react';
+<<<<<<< HEAD
 // import './Forms.css'; // Import CSS file for additional styling
 
 // function BlogPostIntro() {
@@ -257,6 +258,20 @@ function BlogPostIntro() {
       setSaving(false);
     }
   };
+=======
+import React, { useState, useEffect } from 'react';
+import './Forms.css'; // Import CSS file for additional styling
+import Autocomplete from '../../components/AutoComplete/AutoComplete';
+
+function BlogPostIntro() {
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    // Load voices from localStorage on component mount
+    const savedVoices = JSON.parse(localStorage.getItem('voices')) || [];
+    setVoices(savedVoices);
+  }, []);
+>>>>>>> origin/frontend
 
   return (
     <div className="container">
@@ -290,8 +305,11 @@ function BlogPostIntro() {
             ></textarea>
           </div>
 
+        
+
           <div style={{ marginBottom: '15px' }}>
             <label htmlFor="tone-of-voice">Tone of Voice:</label>
+<<<<<<< HEAD
             <input
               id="tone"
               type="text"
@@ -299,6 +317,12 @@ function BlogPostIntro() {
               style={{ width: '100%', padding: '9px' }}
               onChange={handleChange}
               value={formData.tone}
+=======
+            <Autocomplete
+              suggestions={voices}
+              onInputChange={(input) => {}} // Empty function since we are not using toneOfVoice
+              placeholder="Informative, Friendly, Encouraging"
+>>>>>>> origin/frontend
             />
           </div>
           

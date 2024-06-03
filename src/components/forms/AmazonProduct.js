@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import './Forms.css'; // Import CSS file for additional styling
 
@@ -250,6 +251,21 @@ function AmazonProduct() {
       setSaving(false);
     }
   };
+=======
+// src/Forms/AmazonProduct.js
+import React, { useState, useEffect } from 'react';
+import './Forms.css';
+import Autocomplete from '../../components/AutoComplete/AutoComplete';
+
+function AmazonProduct() {
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    // Load voices from localStorage on component mount
+    const savedVoices = JSON.parse(localStorage.getItem('voices')) || [];
+    setVoices(savedVoices);
+  }, []);
+>>>>>>> origin/frontend
 
   return (
     <div className="container">
@@ -282,6 +298,7 @@ function AmazonProduct() {
           </div>
 
           <div style={{ marginBottom: '15px' }}>
+<<<<<<< HEAD
             <label htmlFor="toneOfVoice">Tone of Voice:</label>
             <input
               id="toneOfVoice"
@@ -294,12 +311,25 @@ function AmazonProduct() {
           
           <button type="submit" disabled={loading}>
             {loading ? 'Generating...' : 'Generate'}
+=======
+            <label htmlFor="tone-of-voice">Tone of Voice:</label>
+            <Autocomplete
+              suggestions={voices}
+              onInputChange={(input) => {}} // Empty function since we are not using toneOfVoice
+              placeholder="Witty, Friendly"
+            />
+          </div>
+
+          <button id="submit-btn" type="submit">
+            Generate
+>>>>>>> origin/frontend
           </button>
         </form>
       </div>
 
       <div className="right-panel">
         <div className="response-window">
+<<<<<<< HEAD
           {loading && <p>Loading...</p>}
           {error && <p>Error: {error}</p>}
           {apiResponse && (
@@ -310,12 +340,16 @@ function AmazonProduct() {
               </button>
             </div>
           )}
+=======
+          No output generated yet.
+>>>>>>> origin/frontend
         </div>
       </div>
     </div>
   );
 }
 
+<<<<<<< HEAD
 function ComponentWithApiResponse({ data }) {
   return (
     <div>
@@ -324,4 +358,6 @@ function ComponentWithApiResponse({ data }) {
   );
 }
 
+=======
+>>>>>>> origin/frontend
 export default AmazonProduct;

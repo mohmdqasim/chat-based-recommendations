@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Route,
-  HashRouter as Router,  // Change BrowserRouter to HashRouter
+  HashRouter as Router, // Change BrowserRouter to HashRouter
   Routes,
   Navigate,
 } from "react-router-dom";
@@ -13,7 +13,7 @@ import Bizz from "../pages/DashboardPages/Bizz/Bizz";
 import Bank from "../pages/DashboardPages/Bank/Bank";
 import Chat from "../pages/DashboardPages/Chat/Chat";
 import AmazonPfeature from "../components/forms/AmazonPfeature";
-import Cards from "../components/Cards";
+import Cards from "../components/Cards/Cards";
 import AmazonProduct from "../components/forms/AmazonProduct";
 import BlogPost from "../components/forms/BlogPost";
 import BlogPostIntro from "../components/forms/BlogPostIntro";
@@ -29,7 +29,13 @@ import FacebookAds from "../components/forms/FacebookAds";
 import JobDescription from "../components/forms/JobDescription";
 import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
 import SignIn from "../components/UserAuthentication/SignIn";
-import Register from '../components/Register/Register'
+// import Register from "../components/Register/Register";
+// import Login from "../components/Login/Login";
+import Profile from '../components/Profile/Profile';
+import SignUpForm from "../components/newRegistration/Signup";
+import Login from "../components/newRegistration/Signin"
+
+// import newLogin from '../components/newRegistration/newLogin';
 
 const isAuthenticated = true;
 
@@ -44,16 +50,29 @@ export default function index() {
   return (
     <Router>
       <Routes>
+
+        <Route path="/" element={<SignUpForm />} />
+
+        {/* <Route path="/" element={<Register />} /> */}
+
+        {/* <Route path="/Login" element={<Login />} /> */}
+
+        <Route path="/Login" element={<Login />} />
+
         <Route
           path="/"
           errorElement={<ErrorPage />}
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
+              {/* <NavBar /> */}
+
               <PanelLayout />
             </PrivateRoute>
           }
         >
-          <Route path="Dashboard" index element={<Dashboard />} />
+          <Route path="/Dashboard" index element={<Dashboard />} />
+          {/* <Route path="/" index element={<NavBar />} /> */}
+
           <Route path="/voice" element={<Voice />} />
           <Route path="/bizz" element={<Bizz />} />
           <Route path="/bank" element={<Bank />} />
@@ -63,26 +82,28 @@ export default function index() {
           <Route path="/AmazonProduct" element={<AmazonProduct />} />
           <Route path="/AmazonProduct" element={<AmazonProduct />} />
           <Route path="/BlogPost" element={<BlogPost />} />
-          <Route path="/BlogPostIntro" element={<BlogPostIntro/>} />
-          <Route path="/BlogPostOutline" element={<BlogPostOutline/>} />
-          <Route path="/BlogPostTopicIdeas" element={<BlogPostTopicIdeas/>} />
-          <Route path="/BusinessOrProductName" element={<BusinessOrProductName/>} />
-          <Route path="/Commands" element={<Commands/>} />
-          <Route path="/CompanyBio" element={<CompanyBio/>} />
-          <Route path="/ContentImprover" element={<ContentImprover/>} />
-          <Route path="/CreativeStory" element={<CreativeStory/>} />
-          <Route path="/EmailSubjectLines" element={<EmailSubjectLines/>} />
-          <Route path="/FacebookAds" element={<FacebookAds/>} />
-          <Route path="/JobDescription" element={<JobDescription/>} />
-          <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas/>} />
-          <Route path="/SignIn" element={<SignIn/>} />
-          <Route path="/" element={<Register/>} />
+          <Route path="/BlogPostIntro" element={<BlogPostIntro />} />
+          <Route path="/BlogPostOutline" element={<BlogPostOutline />} />
+          <Route path="/BlogPostTopicIdeas" element={<BlogPostTopicIdeas />} />
+          <Route
+            path="/BusinessOrProductName"
+            element={<BusinessOrProductName />}
+          />
+          <Route path="/Commands" element={<Commands />} />
+          <Route path="/CompanyBio" element={<CompanyBio />} />
+          <Route path="/ContentImprover" element={<ContentImprover />} />
+          <Route path="/CreativeStory" element={<CreativeStory />} />
+          <Route path="/EmailSubjectLines" element={<EmailSubjectLines />} />
+          <Route path="/FacebookAds" element={<FacebookAds />} />
+          <Route path="/JobDescription" element={<JobDescription />} />
+          <Route path="/LinkedInTopicIdeas" element={<LinkedInTopicIdeas />} />
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/Profile" element={<Profile />} />
+          {/* <Route path="/SignUpForm" element={<SignUpForm />} /> */}
 
 
-          
         </Route>
       </Routes>
     </Router>
   );
 }
-

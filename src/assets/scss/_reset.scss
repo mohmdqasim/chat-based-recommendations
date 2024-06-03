@@ -1,5 +1,6 @@
 @import "./mixin";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -7,7 +8,6 @@
 }
 
 :root {
-  --color-page-background: #{$white_color};
   --color-text: #{$white_color};
   --theme-color: #{$dark_color};
   --white-color: #{$white_color};
@@ -18,7 +18,6 @@
 
 body {
   margin: 0;
-  background: $white_color;
   color: var(--theme-color);
   -webkit-text-size-adjust: $w_100;
   -ms-text-size-adjust: none;
@@ -34,18 +33,14 @@ body {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
   font-family: var(--font-family);
   font-weight: bold;
   color: $dark_color;
 }
 
+/* Additional reset styles */
 .w-100 {
   width: $w_100;
 }
@@ -142,8 +137,7 @@ h6 {
   margin: 0 !important;
 }
 
-input[type="submit"],
-button {
+input[type="submit"], button {
   cursor: pointer;
 }
 
@@ -152,21 +146,11 @@ img {
   border-style: $d_none;
 }
 
-button:focus,
-textarea:focus,
-input:focus,
-select {
+button:focus, textarea:focus, input:focus, select {
   outline: $d_none;
 }
 
-textarea,
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="number"],
-input[type="date"],
-select {
+textarea, input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], input[type="date"], select {
   color: #000;
   font-family: var(--font-family);
   font-family: "Inter", sans-serif !important;
@@ -253,7 +237,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .form-control {
- 
   font-size: 14px;
   outline: 0;
   padding: 10px;
@@ -268,7 +251,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   &:focus {
-    
     outline: 0;
     box-shadow: none;
   }
@@ -279,7 +261,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 0
   }
 }
-
 
 table {
   background-color: transparent;
@@ -295,13 +276,7 @@ table {
   width: 100%;
 }
 
-table>thead>tr>th,
-table>tbody>tr>th,
-table>tfoot>tr>th,
-table>thead>tr>td,
-table>tbody>tr>td,
-table>tfoot>tr>td {
-  //border: 1px solid #666666;
+table>thead>tr>th, table>tbody>tr>th, table>tfoot>tr>th, table>thead>tr>td, table>tbody>tr>td, table>tfoot>tr>td {
   line-height: 1.5;
   text-align: center;
   vertical-align: middle;
@@ -313,12 +288,7 @@ table thead tr th {
   text-transform: capitalize;
 }
 
-.table>caption+thead>tr:first-child>th,
-.table>colgroup+thead>tr:first-child>th,
-.table>thead:first-child>tr:first-child>th,
-.table>caption+thead>tr:first-child>td,
-.table>colgroup+thead>tr:first-child>td,
-.table>thead:first-child>tr:first-child>td {
+.table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>th, .table>caption+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>td, .table>thead:first-child>tr:first-child>td {
   border-top: 1px solid #666666;
 }
 
@@ -327,12 +297,7 @@ table>thead>tr>th {
   vertical-align: middle;
 }
 
-table>caption+thead>tr:first-child>th,
-table>colgroup+thead>tr:first-child>th,
-table>thead:first-child>tr:first-child>th,
-table>caption+thead>tr:first-child>td,
-table>colgroup+thead>tr:first-child>td,
-table>thead:first-child>tr:first-child>td {
+table>caption+thead>tr:first-child>th, table>colgroup+thead>tr:first-child>th, table>thead:first-child>tr:first-child>th, table>caption+thead>tr:first-child>td, table>colgroup+thead>tr:first-child>td, table>thead:first-child>tr:first-child>td {
   border-bottom: 0 none;
 }
 
@@ -340,12 +305,7 @@ table>tbody+tbody {
   border-top: 2px solid #666666;
 }
 
-.table>thead>tr>th,
-.table>tbody>tr>th,
-.table>tfoot>tr>th,
-.table>thead>tr>td,
-.table>tbody>tr>td,
-.table>tfoot>tr>td {
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
   padding: 19px 10px;
 
   @media (max-width: $breakpoint_laptop) {

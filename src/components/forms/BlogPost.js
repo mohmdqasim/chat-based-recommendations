@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import './Forms.css'; // Import CSS file for additional styling
 
@@ -243,6 +244,21 @@ function BlogPost() {
     }
   };
 
+=======
+import React, {useState,useEffect} from 'react';
+import './Forms.css'; // Import CSS file for additional styling
+import Autocomplete from '../../components/AutoComplete/AutoComplete';
+
+function BlogPost() {
+
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    // Load voices from localStorage on component mount
+    const savedVoices = JSON.parse(localStorage.getItem('voices')) || [];
+    setVoices(savedVoices);
+  }, []);
+>>>>>>> origin/frontend
   return (
     <div className="container">
       <div className="left-panel">
@@ -272,6 +288,7 @@ function BlogPost() {
           </div>
 
           <div style={{ marginBottom: '15px' }}>
+<<<<<<< HEAD
             <label htmlFor="toneOfVoice">Tone of Voice:</label>
             <input
               id="toneOfVoice"
@@ -279,6 +296,13 @@ function BlogPost() {
               placeholder="Motivational"
               style={{ width: '100%', padding: '9px' }}
               onChange={handleChange}
+=======
+            <label htmlFor="tone-of-voice">Tone of Voice:</label>
+            <Autocomplete
+              suggestions={voices}
+              onInputChange={(input) => {}} // Empty function since we are not using toneOfVoice
+              placeholder="Motivational"
+>>>>>>> origin/frontend
             />
           </div>
           

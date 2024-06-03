@@ -1,0 +1,38 @@
+// src/components/Autocomplete.scss
+.autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .autocomplete-input {
+    width: 100%;
+    padding: 9px;
+    box-sizing: border-box;
+  }
+  
+  .suggestions {
+    position: absolute;
+    border: 1px solid #ddd;
+    border-top: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: white;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .suggestions li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .suggestions li:last-child {
+    border-bottom: none;
+  }
+  

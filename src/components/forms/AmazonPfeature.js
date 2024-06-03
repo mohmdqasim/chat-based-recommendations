@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import './Forms.css'; 
 // // import { MediaQuery } from 'react-responsive';
@@ -418,13 +419,27 @@ function AmazonPfeature() {
       setSaving(false);
     }
   };
+=======
+import React, { useState, useEffect } from 'react';
+import './Forms.css'; 
+import Autocomplete from '../../components/AutoComplete/AutoComplete';
+
+function AmazonPfeature() {
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    // Load voices from localStorage on component mount
+    const savedVoices = JSON.parse(localStorage.getItem('voices')) || [];
+    setVoices(savedVoices);
+  }, []);
+>>>>>>> origin/frontend
 
   return (
     <div className="container">
       <div className="left-panel">
         <form style={{ maxWidth: '400px', margin: 'auto' }} onSubmit={handleSubmit}>
           <div style={{ marginBottom: '15px' }}>
-            <h2>Amazon Product Description</h2>
+            <h4>Amazon Product Features</h4>
             <p>Create compelling product descriptions for Amazon listings.</p>
           </div>
 
@@ -464,6 +479,7 @@ function AmazonPfeature() {
 
           <div style={{ marginBottom: '15px' }}>
             <label htmlFor="tone-of-voice">Tone of Voice:</label>
+<<<<<<< HEAD
             <input
               id="toneOfVoice"
               type="text"
@@ -471,6 +487,12 @@ function AmazonPfeature() {
               style={{ width: '100%', padding: '9px' }}
               onChange={handleChange}
               value={formData.toneOfVoice}
+=======
+            <Autocomplete
+              suggestions={voices}
+              onInputChange={(input) => {}} // Empty function since we are not using toneOfVoice
+              placeholder="Witty, Friendly"
+>>>>>>> origin/frontend
             />
           </div>
           <button type="submit" disabled={loading}>
@@ -481,6 +503,7 @@ function AmazonPfeature() {
 
       <div className="right-panel">
         <div className="response-window">
+<<<<<<< HEAD
           {loading && <p>Loading...</p>}
           {error && <p>Error: {error}</p>}
           {apiResponse && (
@@ -491,6 +514,9 @@ function AmazonPfeature() {
               </button>
             </div>
           )}
+=======
+          No output generated yet.
+>>>>>>> origin/frontend
         </div>
       </div>
     </div>
