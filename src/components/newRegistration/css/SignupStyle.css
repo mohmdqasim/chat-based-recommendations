@@ -207,12 +207,7 @@ input[type=checkbox]:not(old) + label {
 
 
 @media screen and (max-width: 768px) {
-  .signup-content {
-    flex-direction: column; /* Change flex direction to column */
-    align-items: center; /* Center items horizontally */
-    align-content: center;
-    margin-right: 0; /* Center the content */
-  }
+
 
   .signup-form, .signup-image {
     width: 100%; /* Make both elements full width */
@@ -220,6 +215,14 @@ input[type=checkbox]:not(old) + label {
   
     
   }
+  .signup-content {
+    flex-direction: column; /* Change flex direction to column */
+    align-items: center; /* Center items horizontally */
+    align-content: center;
+    margin-right: 0; /* Center the content */
+  }
+
+  
 
   .signup-image {
     order: 1; /* Change order to appear below form */

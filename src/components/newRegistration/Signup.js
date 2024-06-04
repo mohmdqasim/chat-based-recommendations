@@ -513,12 +513,12 @@ const SignUpForm = () => {
   const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
 
-  const handleImageChange = (e) => {
-    setUserDetails({
-        ...user,
-        image: e.target.files[0], // Set the selected image file in state
-    });
-};
+//   const handleImageChange = (e) => {
+//     setUserDetails({
+//         ...user,
+//         image: e.target.files[0], // Set the selected image file in state
+//     });
+// };
 
   const [user, setUserDetails] = useState({
     fname: "",
@@ -717,7 +717,7 @@ const SignUpForm = () => {
               </div>
 
 
-              <div className="form-group">
+              {/* <div className="form-group">
     <label htmlFor="image"></label>
     <input
         type="file"
@@ -726,7 +726,7 @@ const SignUpForm = () => {
         accept="image/*"
         onChange={handleImageChange}
     />
-</div>
+</div> */}
 
 
               <div className="submit-btn" style={{  }}>

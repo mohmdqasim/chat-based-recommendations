@@ -293,7 +293,7 @@ const Profile =  ({ handleRefresh }) => {
       setUser(updatedUser);
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setEditMode(false);
-      handleRefresh();
+     
       // refresh
     } catch (error) {
       console.error("Error during profile update:", error.message);
@@ -331,6 +331,10 @@ const Profile =  ({ handleRefresh }) => {
             </>
           ) : (
             <>
+
+            <div >
+            <img className={styles.profile_image} src={`data:image/jpeg;base64,${user.image}`} alt="Profile" />
+          </div>
               <p>
                 <span className={styles.label}>First Name:</span> {user.fname}
               </p>
@@ -342,9 +346,11 @@ const Profile =  ({ handleRefresh }) => {
           <p>
             <span className={styles.label}>Email:</span> {user.email}
           </p>
-          <div className={styles.imageContainer}>
-            <img src={`data:image/jpeg;base64,${user.image}`} alt="Profile" className={styles.image} />
-          </div>
+
+          
+          {/* <div >
+            <img className={styles.profile_image} src={`data:image/jpeg;base64,${user.image}`} alt="Profile" />
+          </div> */}
         </div>
         {editMode && (
           <div>

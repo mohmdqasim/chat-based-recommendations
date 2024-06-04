@@ -6,6 +6,22 @@
   min-height: 100vh;
   background: linear-gradient(to right, #1c8ed2, #8beee6);
 }
+/* .image {
+  max-width: 20%;
+  height: auto;
+} */
+/* img{
+  max-width: 20%;
+} */
+.profile_image{
+  max-width: 20%;
+  border-radius: 50%;
+  
+}
+
+/* .profile_image{
+ max-width: 20%;
+} */
 
 
 

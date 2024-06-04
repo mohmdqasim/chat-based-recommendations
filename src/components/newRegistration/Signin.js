@@ -225,7 +225,7 @@ const LoginForm = () => {
         <section className="sign-in">
             <div className="container-signIn">
                 <div className="signin-content">
-                    <div className="signin-image">
+                    <div style={{ textAlign: "center" }}>
                         <figure><img src={login} alt="sign in"/></figure>
                         <a href="/" className="signup-image-link" style={{textDecoration: 'underline',textAlign:'center',color:'green',fontWeight:'bold'}}>Create an Account</a>
                     </div>

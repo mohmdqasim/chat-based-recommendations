@@ -194,7 +194,7 @@ export const Sidebars = ({ sideBarMenu }) => {
             <div className="logo-container">
               <div className="logo-image-container">
                 {user.image ? (
-                  <img src={`data:image/jpeg;base64,${user.image}`} alt="User" className="logo-image" />
+                  <img src={`data:image/jpeg;base64,${user.image}`} alt="User" className="logo-profileImage" />
                 ) : (
                   <img src="../../assets/images/default-profile.jpg" alt="User" className="logo-image" />
                 )}
