@@ -126,7 +126,9 @@
 
 
 
-
+// Sidebars
+// Sidebars.js
+// Sidebars.js
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
@@ -137,16 +139,16 @@ import bizz from "../../assets/images/bizz.svg";
 import bank from "../../assets/images/bank.svg";
 import CardsImage from "../../assets/images/edit.svg";
 import logout from "../../assets/images/logout.svg";
-import TrainChatbotModal from "../Modal/TrainChatbotModal";
+import TrainChatbotModal from "../Modal/TrainChatbotModal"; 
 
-export const Sidebars = (props) => {
+export const Sidebars = ({ sideBarMenu }) => {
   const location = useLocation();
   const [activeImage, setActiveImage] = useState(() => {
     const storedImage = localStorage.getItem("activeImage");
     return storedImage ? storedImage : dashboard;
   });
 
-  const [user, setUser] = useState({ fname: "",lname:'', image: "" });
+  const [user, setUser] = useState({ fname: "", lname: "", image: "" });
 
   useEffect(() => {
     // Fetch user data from localStorage or API if not already fetched
@@ -177,6 +179,9 @@ export const Sidebars = (props) => {
 
   const handleImageClick = (image) => {
     setActiveImage(image);
+    if (window.innerWidth <= 768) {
+      sideBarMenu();
+    }
   };
 
   const [modalShow, setModalShow] = useState(false);
@@ -184,30 +189,24 @@ export const Sidebars = (props) => {
   return (
     <>
       <Sidebar>
-      <div className="logo">
-  <Link to="/Profile" className="logo-link">
-    <div className="logo-container">
-      <div className="logo-image-container">
-        {user.image ? (
-          <img src={`data:image/jpeg;base64,${user.image}`} alt="User" className="logo-image"/>
-        ) : (
-          <img src="../../assets/images/default-profile.jpg" alt="User" className="logo-image"/>
-        )}
-      </div>
-      <div className="user-name">
-        <p>{user.fname + ' ' + user.lname}</p>
-        {/* <p>{user.mname}</p> */}
-        {/* <p>{user.lname}</p> */}
-
-
-      </div>
-    </div>
-  </Link>
-</div>
-
-
-
-
+        <div className="logo">
+          <Link to="/Profile"  className="logo-link">
+            <div className="logo-container">
+              <div className="logo-image-container">
+                {user.image ? (
+                  <img src={`data:image/jpeg;base64,${user.image}`} alt="User" className="logo-image" />
+                ) : (
+                  <img src="../../assets/images/default-profile.jpg" alt="User" className="logo-image" />
+                )}
+              </div>
+              <div className="user-name">
+                <p>{user.fname + " " + user.lname}</p>
+                {/* <p>{user.mname}</p> */}
+                {/* <p>{user.lname}</p> */}
+              </div>
+            </div>
+          </Link>
+        </div>
         <Menu>
           <button className="chatbot" onClick={() => setModalShow(true)}>
             Start Campaign <img src="/images/add.svg" alt="add" />
@@ -220,7 +219,6 @@ export const Sidebars = (props) => {
             <img src={dashboard} alt="icon" />
             <p>Dashboard</p>
           </MenuItem>
-
           <MenuItem
             onClick={() => handleImageClick(CardsImage)}
             component={<Link to="/Cards" />}
@@ -229,7 +227,6 @@ export const Sidebars = (props) => {
             <img src={CardsImage} alt="icon" />
             <p>Cards</p>
           </MenuItem>
-
           <MenuItem
             onClick={() => handleImageClick(voice)}
             component={<Link to="/voice" />}
@@ -238,7 +235,6 @@ export const Sidebars = (props) => {
             <img src={voice} alt="icon" />
             <p>Voice</p>
           </MenuItem>
-
           <MenuItem
             onClick={() => handleImageClick(bizz)}
             component={<Link to="/bizz" />}
@@ -247,7 +243,6 @@ export const Sidebars = (props) => {
             <img src={bizz} alt="icon" />
             <p>Biz Info</p>
           </MenuItem>
-
           <MenuItem
             onClick={() => handleImageClick(bank)}
             component={<Link to="/bank" />}
@@ -256,7 +251,6 @@ export const Sidebars = (props) => {
             <img src={bank} alt="icon" />
             <p>Contact bank</p>
           </MenuItem>
-
           <MenuItem
             onClick={() => handleImageClick(logout)}
             component={<Link to="/Login" />}
@@ -267,7 +261,6 @@ export const Sidebars = (props) => {
           </MenuItem>
         </Menu>
       </Sidebar>
-
       <TrainChatbotModal
         show={modalShow}
         handleClose={() => setModalShow(false)}

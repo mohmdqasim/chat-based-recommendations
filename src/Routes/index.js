@@ -29,8 +29,6 @@ import FacebookAds from "../components/forms/FacebookAds";
 import JobDescription from "../components/forms/JobDescription";
 import LinkedInTopicIdeas from "../components/forms/LinkedInTopicIdeas";
 import SignIn from "../components/UserAuthentication/SignIn";
-// import Register from "../components/Register/Register";
-// import Login from "../components/Login/Login";
 import Profile from '../components/Profile/Profile';
 import SignUpForm from "../components/newRegistration/Signup";
 import Login from "../components/newRegistration/Signin"
@@ -52,11 +50,6 @@ export default function index() {
       <Routes>
 
         <Route path="/" element={<SignUpForm />} />
-
-        {/* <Route path="/" element={<Register />} /> */}
-
-        {/* <Route path="/Login" element={<Login />} /> */}
-
         <Route path="/Login" element={<Login />} />
 
         <Route
@@ -64,8 +57,6 @@ export default function index() {
           errorElement={<ErrorPage />}
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              {/* <NavBar /> */}
-
               <PanelLayout />
             </PrivateRoute>
           }

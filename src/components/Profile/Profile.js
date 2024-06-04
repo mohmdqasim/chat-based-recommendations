@@ -212,14 +212,15 @@
 
 
 // // =====================================above is latest
+
+// Profile.js
 import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.css";
 
-const Profile = () => {
+const Profile =  ({ handleRefresh }) => {
   const [user, setUser] = useState(null);
-  const [image, setImage] = useState(null);
   const [editMode, setEditMode] = useState(false);
-  const [formData, setFormData] = useState({ fname: "", lname: "",image:'' });
+  const [formData, setFormData] = useState({ fname: "", lname: "", image: "" });
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -229,54 +230,24 @@ const Profile = () => {
       setFormData({
         fname: parsedUser.fname,
         lname: parsedUser.lname,
-        image:parsedUser.image,
+        image: parsedUser.image,
       });
     }
   }, []);
 
   const handleImageChange = (e) => {
-    const selectedImage = e.target.files[0];
-    setImage(selectedImage);
-  };
+    const file = e.target.files[0];
+    const reader = new FileReader();
 
-  const handleImageUpload = async () => {
-    if (!image) {
-      alert("Please select an image to upload.");
-      return;
-    }
+    reader.onloadend = () => {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        image: reader.result.split(',')[1],  // Get the base64 string
+      }));
+    };
 
-    try {
-      const formData = new FormData();
-      formData.append("file", image);
-
-      const token = localStorage.getItem("token");
-      if (!token) {
-        alert("No token found, please log in.");
-        return;
-      }
-
-      const response = await fetch("http://127.0.0.1:5000/upload", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setUser({ ...user, image: data.image });
-        localStorage.setItem(
-          "user",
-          JSON.stringify({ ...user, image: data.image })
-        );
-      } else {
-        console.error("Image upload failed:", data.message);
-        alert(data.message);
-      }
-    } catch (error) {
-      console.error("Error during image upload:", error.message);
+    if (file) {
+      reader.readAsDataURL(file);
     }
   };
 
@@ -292,6 +263,7 @@ const Profile = () => {
     }
 
     try {
+      console.log("Sending request with token:", token); // Debugging token
       const response = await fetch("http://127.0.0.1:5000/update_info", {
         method: "PUT",
         headers: {
@@ -301,18 +273,31 @@ const Profile = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      if (!response.ok) {
+        const errorText = await response.text(); // Read the response as text
+        console.error("Error response:", errorText); // Log the raw error response
 
-      if (response.ok) {
-        setUser({ ...user, ...formData });
-        localStorage.setItem("user", JSON.stringify({ ...user, ...formData }));
-        setEditMode(false);
-      } else {
-        console.error("Profile update failed:", data.message);
-        alert(data.message);
+        try {
+          const errorData = JSON.parse(errorText); // Try to parse it as JSON
+          console.error("Profile update failed:", errorData.message);
+          alert(errorData.message);
+        } catch (e) {
+          console.error("Profile update failed:", errorText); // Log the raw text if parsing fails
+          alert("Failed to update profile. Please try again.");
+        }
+        return;
       }
+
+      // const data = await response.json();
+      const updatedUser = { ...user, ...formData };
+      setUser(updatedUser);
+      localStorage.setItem("user", JSON.stringify(updatedUser));
+      setEditMode(false);
+      handleRefresh();
+      // refresh
     } catch (error) {
       console.error("Error during profile update:", error.message);
+      alert("An error occurred while updating your profile. Please try again.");
     }
   };
 
@@ -357,34 +342,23 @@ const Profile = () => {
           <p>
             <span className={styles.label}>Email:</span> {user.email}
           </p>
-          {/* {user.image && (
-            <img
-              src={`http://localhost:5000/uploads/${user.image}`}
-              alt="Profile"
-              className={styles.profileImage}
-            />
-          )} */}
+          <div className={styles.imageContainer}>
+            <img src={`data:image/jpeg;base64,${user.image}`} alt="Profile" className={styles.image} />
+          </div>
         </div>
         {editMode && (
-          <>
-            <div>
-              <label className={styles.label} htmlFor="image">
-                Profile Image:
-              </label>
-              <input
-                type="file"
-                id="image"
-                accept="image/*"
-                onChange={handleImageChange}
-                className={styles.input}
-              />
-            </div>
-            {/* <div className="button-container">
-              <button onClick={handleImageUpload} className={styles.uploadBtn}>
-                Upload Image
-              </button>
-            </div> */}
-          </>
+          <div>
+            <label className={styles.label} htmlFor="image">
+              Profile Image:
+            </label>
+            <input
+              type="file"
+              id="image"
+              accept="image/*"
+              onChange={handleImageChange}
+              className={styles.input}
+            />
+          </div>
         )}
         <div className="button-container">
           {editMode ? (
@@ -392,14 +366,19 @@ const Profile = () => {
               <button onClick={handleProfileUpdate} className={styles.uploadBtn}>
                 Save Changes
               </button>
-              <button onClick={() => setEditMode(false)} className={styles.uploadBtn} style={{ padding: "5px 40px" }}>
+              <button
+                onClick={() => setEditMode(false)}
+                className={styles.uploadBtn}
+                style={{ padding: "5px 40px" }}
+              >
                 Cancel
               </button>
             </>
           ) : (
             <button
               onClick={() => setEditMode(true)}
-              className={styles.editBtn} style={{ padding: '7px 23px' }}
+              className={styles.editBtn}
+              style={{ padding: "7px 23px" }}
             >
               Edit Profile
             </button>
@@ -411,6 +390,7 @@ const Profile = () => {
 };
 
 export default Profile;
+
 
 
 
