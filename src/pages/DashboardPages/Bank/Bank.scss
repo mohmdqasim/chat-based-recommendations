@@ -1,3 +1,76 @@
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 46px;
+    padding: 16px;
+  }
+  
+  .card {
+    cursor: pointer;
+  }
+  
+  
+  .card-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    max-width: 600px;
+    width: 400px; /* Ensures the cards have a consistent width */
+    height: 180px; /* Fixed height for the card */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+  
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+    //   margin-bottom: -80px;
+    }
+  
+    .description {
+      font-size: 1rem;
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    //   white-space: nowrap;
+    //   margin-top: auto;
+    }
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .messageBox{
     position: absolute;
     top: 100%;
