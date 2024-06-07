@@ -1,53 +1,153 @@
-.card-list {
+// .bank-card-list {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     align-items: center;
+//     align-self: center;
+//     gap: 46px;
+//     padding: 16px;
+//   }
+  
+//   .bank-card {
+//     cursor: pointer;
+//   }
+  
+//   .bank-card-content {
+//     background-color: #fff;
+//     border-radius: 8px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+//     padding: 16px;
+//     max-width: 600px;
+//     width: 400px; /* Ensures the cards have a consistent width */
+//     height: 180px; /* Fixed height for the card */
+//     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   .bank-card-content:hover {
+//     transform: translateY(-8px);
+//     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+//   }
+  
+//   .bank-title {
+//     font-size: 1.3rem;
+//     font-weight: bold;
+//     color: #333;
+//     text-align: center;
+//   }
+  
+//   .bank-description {
+//     font-size: 1rem;
+//     color: #666;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: normal; /* Allow text to wrap */
+//     margin-top: 8px; /* Add margin-top to create space between title and description */
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-line-clamp: 5; /* Limit the text to 5 lines */
+//     line-height: 1.2; /* Adjust line height for better spacing */
+//   }
+  
+//   @media (max-width: 768px) {
+//     .bank-card-content {
+//       max-width: 500px;
+//       width: 300%; /* Make sure it takes full width on smaller screens */
+//     }
+  
+//     .bank-description {
+//       white-space: normal; /* Allow text to wrap */
+//       text-overflow: ellipsis;
+//       overflow: hidden; /* Ensures the text-overflow property works */
+//       display: -webkit-box;
+//       -webkit-line-clamp: 3; /* Limits the text to 3 lines */
+//       -webkit-box-orient: vertical;
+//     }
+//   }
+  
+
+
+
+
+.bank-card-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    align-self: center;
     gap: 46px;
     padding: 16px;
   }
   
-  .card {
+  .bank-card {
     cursor: pointer;
+    width: 400px; /* Ensures the cards have a consistent width */
+    flex: 0 0 400px; /* Ensures the flex item does not grow or shrink */
   }
   
-  
-  .card-content {
+  .bank-card-content {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 16px;
-    max-width: 600px;
-    width: 400px; /* Ensures the cards have a consistent width */
     height: 180px; /* Fixed height for the card */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
+  }
   
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  .bank-card-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .bank-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+  
+  .bank-description {
+    font-size: 1rem;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Allow text to wrap */
+    margin-top: 8px; /* Add margin-top to create space between title and description */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5; /* Limit the text to 5 lines */
+    line-height: 1.2; /* Adjust line height for better spacing */
+  }
+  
+  @media (max-width: 768px) {
+    .bank-card {
+      width: 100%; /* Make sure it takes full width on smaller screens */
+      max-width: 300px; /* Ensure it doesn't exceed max-width on smaller screens */
+      flex: 0 0 100%; /* Ensure the flex item takes full width */
     }
   
-    .title {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #333;
-      text-align: center;
-    //   margin-bottom: -80px;
+    .bank-card-content {
+      width: 100%; /* Ensure it takes full width on smaller screens */
+      max-width: 100%; /* Ensure it takes full width on smaller screens */
     }
   
-    .description {
-      font-size: 1rem;
-      color: #666;
-      overflow: hidden;
+    .bank-description {
+      white-space: normal; /* Allow text to wrap */
       text-overflow: ellipsis;
-    //   white-space: nowrap;
-    //   margin-top: auto;
+      overflow: hidden; /* Ensures the text-overflow property works */
+      display: -webkit-box;
+      -webkit-line-clamp: 5; /* Limits the text to 3 lines */
+      -webkit-box-orient: vertical;
     }
   }
   
   
+  
+  
+  
 
 
 
@@ -71,179 +171,179 @@
 
 
 
-.messageBox{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    transform: translate(0, -100%);
-    width: 1075px;
-    @media screen and (max-width: 1024px) {
-        position: relative;
-        top: unset;
-        left: unset;
-        transform: unset;
-        width: 100%;
-        }
-    .logo{
-        background-color: #fff;
-        border: 1px solid #D9D9D9;
-        border-radius: 100px;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        font-weight: 700;
-        margin: 0 auto;
-    }
-    h4{
-        font-size: 24px;
-        margin: 20px 0;
-    }
-    .cards{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 10px;
-        .mini-card{
-            width: 49%;
-            background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #D5D5D5;
-            text-align: left;
-            @media screen and (max-width: 1024px) {
-                width: 48%;  
-                }
-                @media screen and (max-width: 600px) {
-                    width: 100%;
-                    }
-            a{
-                display: inline-block;
-                h4{
-                    font-size: 16px;
-                    margin: 0;
-                }
-                p{
-                    font-size: 14px;
-                    color: #989CA0;
-                    margin: 0;
-                }
-            }
-        }
-    }
-    .input-group{
-        margin-top: 10px;
-        input{
-            margin: 0;
-            color: black;
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #D5D5D5;
-            background: white;
-            border-radius: 10px !important;
-            height: 52px;
-        }
-        button{
-            position: absolute;
-            right: 10px;
-            border: 0;
-            outline: none;
-            background: #D9D9D9;
-            padding: 10px 10px 4px;
-            border-radius: 10px !important;
-            top: 50%;
-            transform: translate(0px, -50%);
-        }
-    }
-    .info{
-        font-size: 12px;
-        text-align: center;
-        margin: 20px 0 0;
-    }
-}
-.sideBar{
-    z-index: 99;
-    width: 280px;
-    height: 100vh;
-    background: #F3F3F3;
-    border-left: 1px solid #EAEDF3;
-    position: fixed;
-    right: 0;
-    padding: 20px;
-    bottom: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
-    @media screen and (max-width: 1024px) {
-    display: none;   
-    }
-    .input-group{
-        margin-top: 10px;
-        input{
-            margin: 0;
-            color: black;
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #D5D5D5;
-            background: transparent;
-            border-radius: 10px !important;
-            height: 50px;
-        }
-        button{
-            position: absolute;
-            right: 5px;
-            border: 0;
-            outline: none;
-            background: transparent;
-            padding: 10px;
-            border-radius: 10px !important;
-            top: 50%;
-            transform: translate(0px, -50%);
-        }
-    }
-    .scrollDiv{
-        margin-bottom: 120px;
-        .box{
-            h4{
-                font-size: 12px;
-                margin: 20px 0 10px;
-                color: #909090;
-                font-weight: normal;
-            }
-            a{
-                display: block;
-                color: #000;
-                font-size: 14px;
-                text-align: left;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-        }
-    }
-    .upgrade{
-        position: fixed;
-        bottom: 0px;
-        background-color:#F3F3F3 ;
-        width: 100%;
-        a{
-            display: flex;
-            align-items: center;
-            color: #000;
-            margin: 10px 0;
-            font-weight: 600;
-            img{
-                margin-right: 10px;
-                border: 1px solid #D5D5D5;
-                border-radius: 100px;
-                width: 45px;
-                padding: 10px;
-                height: 45px;
-            }
-        }
-    }
-}
+// .messageBox{
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     transform: translate(0, -100%);
+//     width: 1075px;
+//     @media screen and (max-width: 1024px) {
+//         position: relative;
+//         top: unset;
+//         left: unset;
+//         transform: unset;
+//         width: 100%;
+//         }
+//     .logo{
+//         background-color: #fff;
+//         border: 1px solid #D9D9D9;
+//         border-radius: 100px;
+//         width: 60px;
+//         height: 60px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         font-size: 24px;
+//         font-weight: 700;
+//         margin: 0 auto;
+//     }
+//     h4{
+//         font-size: 24px;
+//         margin: 20px 0;
+//     }
+//     .cards{
+//         display: flex;
+//         align-items: center;
+//         gap: 10px;
+//         flex-wrap: wrap;
+//         margin-top: 10px;
+//         .mini-card{
+//             width: 49%;
+//             background: #fff;
+//             padding: 15px;
+//             border-radius: 10px;
+//             border: 1px solid #D5D5D5;
+//             text-align: left;
+//             @media screen and (max-width: 1024px) {
+//                 width: 48%;  
+//                 }
+//                 @media screen and (max-width: 600px) {
+//                     width: 100%;
+//                     }
+//             a{
+//                 display: inline-block;
+//                 h4{
+//                     font-size: 16px;
+//                     margin: 0;
+//                 }
+//                 p{
+//                     font-size: 14px;
+//                     color: #989CA0;
+//                     margin: 0;
+//                 }
+//             }
+//         }
+//     }
+//     .input-group{
+//         margin-top: 10px;
+//         input{
+//             margin: 0;
+//             color: black;
+//             width: 100%;
+//             padding: 15px;
+//             border: 1px solid #D5D5D5;
+//             background: white;
+//             border-radius: 10px !important;
+//             height: 52px;
+//         }
+//         button{
+//             position: absolute;
+//             right: 10px;
+//             border: 0;
+//             outline: none;
+//             background: #D9D9D9;
+//             padding: 10px 10px 4px;
+//             border-radius: 10px !important;
+//             top: 50%;
+//             transform: translate(0px, -50%);
+//         }
+//     }
+//     .info{
+//         font-size: 12px;
+//         text-align: center;
+//         margin: 20px 0 0;
+//     }
+// }
+// .sideBar{
+//     z-index: 99;
+//     width: 280px;
+//     height: 100vh;
+//     background: #F3F3F3;
+//     border-left: 1px solid #EAEDF3;
+//     position: fixed;
+//     right: 0;
+//     padding: 20px;
+//     bottom: 0;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     transition: all 0.4s ease;
+//     -webkit-transition: all 0.4s ease;
+//     @media screen and (max-width: 1024px) {
+//     display: none;   
+//     }
+//     .input-group{
+//         margin-top: 10px;
+//         input{
+//             margin: 0;
+//             color: black;
+//             width: 100%;
+//             padding: 10px;
+//             border: 1px solid #D5D5D5;
+//             background: transparent;
+//             border-radius: 10px !important;
+//             height: 50px;
+//         }
+//         button{
+//             position: absolute;
+//             right: 5px;
+//             border: 0;
+//             outline: none;
+//             background: transparent;
+//             padding: 10px;
+//             border-radius: 10px !important;
+//             top: 50%;
+//             transform: translate(0px, -50%);
+//         }
+//     }
+//     .scrollDiv{
+//         margin-bottom: 120px;
+//         .box{
+//             h4{
+//                 font-size: 12px;
+//                 margin: 20px 0 10px;
+//                 color: #909090;
+//                 font-weight: normal;
+//             }
+//             a{
+//                 display: block;
+//                 color: #000;
+//                 font-size: 14px;
+//                 text-align: left;
+//                 overflow: hidden;
+//                 text-overflow: ellipsis;
+//                 white-space: nowrap;
+//             }
+//         }
+//     }
+//     .upgrade{
+//         position: fixed;
+//         bottom: 0px;
+//         background-color:#F3F3F3 ;
+//         width: 100%;
+//         a{
+//             display: flex;
+//             align-items: center;
+//             color: #000;
+//             margin: 10px 0;
+//             font-weight: 600;
+//             img{
+//                 margin-right: 10px;
+//                 border: 1px solid #D5D5D5;
+//                 border-radius: 100px;
+//                 width: 45px;
+//                 padding: 10px;
+//                 height: 45px;
+//             }
+//         }
+//     }
+// }
