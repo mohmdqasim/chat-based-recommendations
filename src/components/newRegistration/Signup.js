@@ -132,7 +132,7 @@ const SignUpForm = () => {
                   <i className="zmdi zmdi-account material-icons-name"></i>
                 </label>
                 <input
-                  type="text"
+                  
                   name="fname"
                   id="fname"
                   placeholder="First Name"
@@ -151,7 +151,7 @@ const SignUpForm = () => {
                   <i className="zmdi zmdi-account material-icons-name"></i>
                 </label>
                 <input
-                  type="text"
+                  
                   name="lname"
                   id="lname"
                   placeholder="Last Name"
